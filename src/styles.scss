@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Rubik&display=swap");
+
+$font-family: "Rubik", "Roboto", "Helvetica Neue", Arial, sans-serif;
+$font-size: 16px;
+
+body {
+  font-size: $font-size;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $font-family;
+}
+
+div {
+  font-family: $font-family;
+  font-size: $font-size;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.custom-overlay {
+  padding: 10px;
+}
+
+.content {
+  display: flex;
+  margin: 82px auto 32px;
+  padding: 0 16px;  
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 158px);
+}
