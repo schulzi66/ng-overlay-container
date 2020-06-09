@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { PopoverRef } from 'src/lib/overlay-container/public-api';
-
+import { NgPopoverRef } from 'projects/ng-overlay-container/src/public-api';
 @Component({
   selector: 'demo-overlay',
   template: `
@@ -33,7 +32,7 @@ export class DemoOverlayComponent {
   public valueTextField = '';
 
   constructor(
-    private popoverRef: PopoverRef<{ demoInput: number[]; returnValue: string }>
+    private popoverRef: NgPopoverRef<{ demoInput: number[]; returnValue: string }>
   ) {
     this.demoInput = this.popoverRef.data.demoInput;
   }

@@ -1,0 +1,42 @@
+{
+	"folders": [
+		{
+			"path": ".",
+		}
+    ],
+    "settings": {        
+        "files.exclude": {
+            ".git": true,
+            ".vs": true,
+            "bin": true,
+            "node_modules": true,
+            "**/dist": true,                        
+            "**/bin": true,
+            "**/obj" : true
+        },
+
+        "[html]": {
+            "editor.tabSize": 2,
+            "editor.defaultFormatter": "vscode.html-language-features"
+        },
+        "[typescript]": {
+            "editor.tabSize": 2,
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[javascript]": {
+            "editor.tabSize": 2,
+            "editor.defaultFormatter": "esbenp.prettier-vscode"
+        },
+        "[markdown]": {
+            "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+        },
+        "prettier.printWidth": 120,
+        "prettier.proseWrap": "never",
+        "prettier.singleQuote": true,
+        "prettier.trailingComma": "none",
+        "html.format.wrapAttributes": "force-aligned",
+        
+        "typescript.updateImportsOnFileMove.enabled": "always",
+        "typescript.preferences.quoteStyle": "single",
+    }
+}

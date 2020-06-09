@@ -1,10 +1,10 @@
 import { ConnectionPositionPair, Overlay, OverlayConfig, PositionStrategy } from '@angular/cdk/overlay';
 import { ComponentPortal, PortalInjector } from '@angular/cdk/portal';
 import { Injectable, Injector } from '@angular/core';
-import { DEFAULT_OVERLAY_CONFIGURATION, OverlayContainerConfiguration } from './models/overlay-container-configuration.interface';
-import { OverlayContainerParameters } from './models/overlay-container-parameters.interface';
-import { PopoverRef } from './popover-component/popover-reference';
-import { NgPopoverComponent } from './popover-component/popover.component';
+import { DEFAULT_OVERLAY_CONFIGURATION, NgOverlayContainerConfiguration } from './models/ng-overlay-container-configuration.interface';
+import { NgOverlayContainerParameters } from './models/ng-overlay-container-parameters.interface';
+import { NgPopoverRef } from './popover-component/ng-popover-reference';
+import { NgPopoverComponent } from './popover-component/ng-popover.component';
 
 /**
  * The NgOverlayContainerService is an injectable service to open a {@link NgPopoverComponent} that behaves as a parent
@@ -23,29 +23,29 @@ export class NgOverlayContainerService {
      * @param R The response data type returned from the afterClosed$ observable when calling close(data?: R)
      * @param origin The origin to which the popover is attached
      * @param content The dynamic content to be rendered: 'template' | 'component' | 'text'
-     * @param data Any data that is needed in the rendered e.g. component accessible from the component constructor via the PopoverRef (DI)
+     * @param data Any data that is needed in the rendered e.g. component accessible from the component constructor via NgPopoverRef (DI)
      * @param configuration Any custom overlay configuration
-     * @returns The reference to the PopoverRef
+     * @returns The reference to the NgPopoverRef
      */
     public open<T = any, R = any>({
         origin,
         content,
         data,
         configuration
-    }: OverlayContainerParameters<T>): PopoverRef<T, R> {
+    }: NgOverlayContainerParameters<T>): NgPopoverRef<T, R> {
         const overlayRef = this.overlay.create(this.getOverlayConfig(origin, configuration));
 
         overlayRef.addPanelClass([DEFAULT_OVERLAY_CONFIGURATION.panelClass, configuration?.panelClass]);
 
-        const popoverRef = new PopoverRef<T, R>(overlayRef, content, data);
+        const ngPopoverRef = new NgPopoverRef<T, R>(overlayRef, content, data);
 
-        const injector = this.createInjector(popoverRef, this.injector);
+        const injector = this.createInjector(ngPopoverRef, this.injector);
         overlayRef.attach(new ComponentPortal(NgPopoverComponent, null, injector));
 
-        return popoverRef;
+        return ngPopoverRef;
     }
 
-    private getOverlayConfig(origin: HTMLElement, configuration: OverlayContainerConfiguration): OverlayConfig {
+    private getOverlayConfig(origin: HTMLElement, configuration: NgOverlayContainerConfiguration): OverlayConfig {
         configuration = { ...DEFAULT_OVERLAY_CONFIGURATION, ...configuration };
         return new OverlayConfig({
             width: configuration.width,
@@ -57,7 +57,7 @@ export class NgOverlayContainerService {
         });
     }
 
-    private getOverlayPosition(origin: HTMLElement, configuration: OverlayContainerConfiguration): PositionStrategy {
+    private getOverlayPosition(origin: HTMLElement, configuration: NgOverlayContainerConfiguration): PositionStrategy {
         const positionStrategy = this.overlay
             .position()
             .flexibleConnectedTo(origin)
@@ -67,7 +67,7 @@ export class NgOverlayContainerService {
         return positionStrategy;
     }
 
-    private getPositions(configuration: OverlayContainerConfiguration): ConnectionPositionPair[] {
+    private getPositions(configuration: NgOverlayContainerConfiguration): ConnectionPositionPair[] {
         return [
             {
                 originX: configuration.originX,
@@ -108,8 +108,8 @@ export class NgOverlayContainerService {
         ];
     }
 
-    private createInjector(popoverRef: PopoverRef, injector: Injector): PortalInjector {
-        const tokens = new WeakMap([[PopoverRef, popoverRef]]);
+    private createInjector(popoverRef: NgPopoverRef, injector: Injector): PortalInjector {
+        const tokens = new WeakMap([[NgPopoverRef, popoverRef]]);
         return new PortalInjector(injector, tokens);
     }
 }

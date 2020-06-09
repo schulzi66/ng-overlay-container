@@ -1,5 +1,6 @@
-<div id="ng-popover" class="ng-popover">
-  <ng-container [ngSwitch]="renderMethod">
+<div id="ng-popover"
+     class="ng-popover">
+  <ng-container [ngSwitch]="ngRenderMethod">
 
     <div *ngSwitchCase="'text'"
          [innerHTML]="content"></div>

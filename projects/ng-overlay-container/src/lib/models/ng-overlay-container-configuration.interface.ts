@@ -3,7 +3,7 @@ import { HorizontalConnectionPos, VerticalConnectionPos } from '@angular/cdk/ove
 /**
  * Configuration for the overlay container
  */
-export interface OverlayContainerConfiguration {
+export interface NgOverlayContainerConfiguration {
     width?: string;
     height?: string;
     panelClass?: string;
@@ -20,7 +20,7 @@ export interface OverlayContainerConfiguration {
 /**
  * Default overlay container configuration
  */
-export const DEFAULT_OVERLAY_CONFIGURATION: OverlayContainerConfiguration = {
+export const DEFAULT_OVERLAY_CONFIGURATION: NgOverlayContainerConfiguration = {
     hasBackdrop: true,
     backdropClass: 'cdk-overlay-transparent-backdrop',
     panelClass: 'ng-overlay-container',

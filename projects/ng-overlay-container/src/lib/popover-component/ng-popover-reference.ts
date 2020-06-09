@@ -1,22 +1,22 @@
-import { Subject } from 'rxjs';
-import { PopoverCloseEvent, PopoverCloseType } from '../models/popover-close-event.interface';
 import { OverlayRef } from '@angular/cdk/overlay';
-import { OverlayContainerContent } from '../models/overlay-container-content.type';
+import { Subject } from 'rxjs';
+import { NgOverlayContainerContent } from '../models/ng-overlay-container-content.type';
+import { NgPopoverCloseEvent, NgPopoverCloseType } from '../models/ng-popover-close-event.interface';
 
 /**
  * The reference to the popover container.
  * @param T The data passed into the container to be available in the embedded e.g. component
  * @param R The response data type returned from the afterClosed$ observable when calling close(data?: R)
  */
-export class PopoverRef<T = any, R = any> {
-    private afterClosed = new Subject<PopoverCloseEvent<R>>();
+export class NgPopoverRef<T = any, R = any> {
+    private afterClosed = new Subject<NgPopoverCloseEvent<R>>();
 
     /**
      * Observable to retrieve the returned data
      */
     public afterClosed$ = this.afterClosed.asObservable();
 
-    constructor(public overlay: OverlayRef, public content: OverlayContainerContent, public data: T) {
+    constructor(public overlay: OverlayRef, public content: NgOverlayContainerContent, public data: T) {
         overlay.backdropClick().subscribe(() => this._close('backdropClick', null));
     }
 
@@ -28,7 +28,7 @@ export class PopoverRef<T = any, R = any> {
         this._close('close', data);
     }
 
-    private _close(type: PopoverCloseType, data: R): void {
+    private _close(type: NgPopoverCloseType, data: R): void {
         this.overlay.dispose();
         this.afterClosed.next({
             type,

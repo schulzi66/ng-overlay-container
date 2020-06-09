@@ -14,7 +14,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ng-overlay-container": [
+        "dist/ng-overlay-container/ng-overlay-container",
+        "dist/ng-overlay-container"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,

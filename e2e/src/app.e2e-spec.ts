@@ -1,5 +1,5 @@
-import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
+import { AppPage } from './app.po';
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('ng-overlay-container app is running!');
+    expect(page.getTitleText()).toEqual('ng-overlay-container-demo app is running!');
   });
 
   afterEach(async () => {

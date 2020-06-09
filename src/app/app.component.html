@@ -6,10 +6,10 @@
             <h3>NgOverlayContainer 🚀</h3>
 
             <div class="menu-entries">
-                <a [routerLink]="['/demo']" routerLinkActive="router-link-active">Demo ✨</a>
-                <a [routerLink]="['/docs']" routerLinkActive="router-link-active">Documentation 📖</a>
-                <a href="https://github.com/schulzi66/ng-overlay-container" target="_blank" rel="noopener">Github ⭐</a>
-                <a href="lubb" target="_blank" rel="noopener">NPM 🎁</a>
+                <a [routerLink]="['/demo']" routerLinkActive="router-link-active" (click)="drawer.close()">Demo ✨</a>
+                <a [routerLink]="['/docs']" routerLinkActive="router-link-active" (click)="drawer.close()">Documentation 📖</a>
+                <a href="https://github.com/schulzi66/ng-overlay-container" target="_blank" rel="noopener" (click)="drawer.close()">Github ⭐</a>
+                <a href="lubb" target="_blank" rel="noopener" (click)="drawer.close()">NPM 🎁</a>
             </div>
         </div>
     </mat-drawer>
