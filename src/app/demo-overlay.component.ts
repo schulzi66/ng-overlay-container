@@ -4,7 +4,7 @@ import { NgPopoverRef } from 'projects/ng-overlay-container/src/public-api';
   selector: 'demo-overlay',
   template: `
     <div style="display: flex; flex-direction: column; height: 100%;">
-      <div style="flex: 1; padding: 10px 10px 0 10px;">
+      <div style="flex: 1;">
         <h2>This is a demo component</h2>
         <div>
           You can pass any component to be displayed into the overlay container.
@@ -16,23 +16,28 @@ import { NgPopoverRef } from 'projects/ng-overlay-container/src/public-api';
           {{ number }}
         </div>
       </div>
-      <button
-        style="margin: 10px;"
-        mat-stroked-button
-        color="primary"
-        (click)="close()"
-      >
+      <form style="margin: 10px;">
+        <mat-form-field style="width: 100%;">
+          <mat-label>Example data to pass back to host</mat-label>
+          <input name="valueTextField" matInput value="" [(ngModel)]="valueTextField" />
+        </mat-form-field>
+      </form>
+
+      <button style="margin: 10px;" mat-stroked-button color="primary" (click)="close()">
         Pass data back
       </button>
     </div>
-  `,
+  `
 })
 export class DemoOverlayComponent {
   public demoInput: number[];
   public valueTextField = '';
 
   constructor(
-    private popoverRef: NgPopoverRef<{ demoInput: number[]; returnValue: string }>
+    private popoverRef: NgPopoverRef<{
+      demoInput: number[];
+      returnValue: string;
+    }>
   ) {
     this.demoInput = this.popoverRef.data.demoInput;
   }

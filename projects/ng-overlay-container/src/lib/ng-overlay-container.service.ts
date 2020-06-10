@@ -35,7 +35,9 @@ export class NgOverlayContainerService {
     }: NgOverlayContainerParameters<T>): NgPopoverRef<T, R> {
         const overlayRef = this.overlay.create(this.getOverlayConfig(origin, configuration));
 
-        overlayRef.addPanelClass([DEFAULT_OVERLAY_CONFIGURATION.panelClass, configuration?.panelClass]);
+        if (configuration?.panelClass) {
+            overlayRef.addPanelClass(configuration.panelClass);
+        }
 
         const ngPopoverRef = new NgPopoverRef<T, R>(overlayRef, content, data);
 
@@ -51,6 +53,7 @@ export class NgOverlayContainerService {
             width: configuration.width,
             height: configuration.height,
             hasBackdrop: configuration.hasBackdrop,
+            panelClass: DEFAULT_OVERLAY_CONFIGURATION.panelClass,
             backdropClass: configuration.backdropClass,
             positionStrategy: this.getOverlayPosition(origin, configuration),
             scrollStrategy: this.overlay.scrollStrategies.reposition()

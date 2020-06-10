@@ -42,78 +42,93 @@
        #originText>
       <span>Plain text</span>
     </a>
+  </div>
 
+  <div style="margin: 20px;">
+    Returned value from component: {{returnedValue}}
   </div>
 
   <div class="config-container">
     <div class="div1 section">
       <h3>Width</h3>
-      <mat-radio-group [(ngModel)]="selectedWidth">
+      <mat-radio-group [(ngModel)]="selectedWidth"
+                       (change)="updateConfig()">
         <mat-radio-button *ngFor="let width of widths"
                           [value]="width">{{width}}</mat-radio-button>
       </mat-radio-group>
     </div>
     <div class="div2 section">
       <h3>Height</h3>
-      <mat-radio-group [(ngModel)]="selectedHeight">
+      <mat-radio-group [(ngModel)]="selectedHeight"
+                       (change)="updateConfig()">
         <mat-radio-button *ngFor="let height of heights"
                           [value]="height">{{height}}</mat-radio-button>
       </mat-radio-group>
     </div>
     <div class="div3 section">
       <h3>OriginX</h3>
-      <mat-radio-group [(ngModel)]="selectedOriginX">
+      <mat-radio-group [(ngModel)]="selectedOriginX"
+                       (change)="updateConfig()">
         <mat-radio-button *ngFor="let originX of originXs"
                           [value]="originX">{{originX}}</mat-radio-button>
       </mat-radio-group>
     </div>
     <div class="div4 section">
       <h3>OriginY</h3>
-      <mat-radio-group [(ngModel)]="selectedOriginY">
+      <mat-radio-group [(ngModel)]="selectedOriginY"
+                       (change)="updateConfig()">
         <mat-radio-button *ngFor="let originY of originYs"
                           [value]="originY">{{originY}}</mat-radio-button>
       </mat-radio-group>
     </div>
     <div class="div5 section">
       <h3>OverlayX</h3>
-      <mat-radio-group [(ngModel)]="selectedOverlayX">
+      <mat-radio-group [(ngModel)]="selectedOverlayX"
+                       (change)="updateConfig()">
         <mat-radio-button *ngFor="let overlayX of overlayXs"
                           [value]="overlayX">{{overlayX}}</mat-radio-button>
       </mat-radio-group>
     </div>
-    <div class="div6 section"> 
+    <div class="div6 section">
       <h3>OverlayY</h3>
-      <mat-radio-group [(ngModel)]="selectedOverlayY">
+      <mat-radio-group [(ngModel)]="selectedOverlayY"
+                       (change)="updateConfig()">
         <mat-radio-button *ngFor="let overlayY of overlayYs"
                           [value]="overlayY">{{overlayY}}</mat-radio-button>
       </mat-radio-group>
     </div>
-    <div class="div7 section"> 
+    <div class="div7 section">
       <h3>OffsetX</h3>
-      <mat-radio-group [(ngModel)]="selectedOffsetX">
+      <mat-radio-group [(ngModel)]="selectedOffsetX"
+                       (change)="updateConfig()">
         <mat-radio-button *ngFor="let offsetX of offsetXs"
                           [value]="offsetX">{{offsetX}}</mat-radio-button>
       </mat-radio-group>
     </div>
-    <div class="div8 section"> 
+    <div class="div8 section">
       <h3>OffsetY</h3>
-      <mat-radio-group [(ngModel)]="selectedOffsetY">
+      <mat-radio-group [(ngModel)]="selectedOffsetY"
+                       (change)="updateConfig()">
         <mat-radio-button *ngFor="let offsetY of offsetYs"
                           [value]="offsetY">{{offsetY}}</mat-radio-button>
       </mat-radio-group>
     </div>
-    <div class="div9 section"> 
+    <div class="div9 section">
       <h3>HasBackdrop</h3>
-      <mat-radio-group [(ngModel)]="selectedHasBackdrop">
+      <mat-radio-group [(ngModel)]="selectedHasBackdrop"
+                       (change)="updateConfig()">
         <mat-radio-button *ngFor="let hasBackdrop of hasBackdrops"
-                          [value]="hasBackdrop">{{hasBackdrop}}</mat-radio-button>
+                          [value]="hasBackdrop">{{hasBackdrop}}
+        </mat-radio-button>
       </mat-radio-group>
     </div>
-    <div class="div10 section"> 
+    <div class="div10 section">
       <h3>BackdropClass</h3>
-      <mat-radio-group [(ngModel)]="selectedBackdropClass">
+      <mat-radio-group [(ngModel)]="selectedBackdropClass"
+                       (change)="updateConfig()">
         <mat-radio-button *ngFor="let backdropClass of backdropClasses"
-                          [value]="backdropClass">{{backdropClass}}</mat-radio-button>
+                          [value]="backdropClass">
+          {{backdropClass}}</mat-radio-button>
       </mat-radio-group>
     </div>
   </div>
