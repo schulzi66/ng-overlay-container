@@ -5,6 +5,16 @@ Making the creation of dynamic overlays a piece of 🍰
 ```
 
 ### Import
+Install the PeerDependencies.
+
+Add a material theme e.g. a prebuild one (if not done already):
+ ```json
+"styles": [        
+    "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+    ...
+]
+ ```
+ 
 Import the ```NgOverlayContainerModule``` in your ```app.module```:
 
 ```typescript

@@ -1,4 +1,14 @@
-### Import
+# Import
+Install the PeerDependencies.
+
+Add a material theme e.g. a prebuild one (if not done already):
+ ```json
+"styles": [        
+    "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+    ...
+]
+ ```
+
 Import the ```NgOverlayContainerModule``` in your ```app.module```:
 
 ```typescript
@@ -12,7 +22,7 @@ import { NgOverlayContainerModule } from 'ng-overlay-container';
 ```
 <br>
 
-### Usage
+# Usage
 The overlay can be attached to any HTMLElement via #origin
 
 
@@ -115,7 +125,7 @@ export class YourComponent {
 
 <br>
 
-### Open method definition
+## Open method definition
 
 ```typescript
 /**
@@ -132,7 +142,7 @@ public open<T = any, R = any>({ origin, content, data, configuration }: NgOverla
 ```
 <br>
 
-### NgOverlayContainerParameters
+## NgOverlayContainerParameters
 
 ````typescript
 /**
@@ -147,7 +157,7 @@ export interface NgOverlayContainerParameters<T> {
 ````
 <br>
 
-### NgOverlayContainerContent
+## NgOverlayContainerContent
 
 ````typescript
 /**
@@ -157,7 +167,7 @@ export type NgOverlayContainerContent = TemplateRef<any> | Type<any> | string;
 ````
 <br>
 
-### NgOverlayContainerConfiguration
+## NgOverlayContainerConfiguration
 
 ````typescript
 /**
@@ -179,7 +189,7 @@ export interface NgOverlayContainerConfiguration {
 ````
 <br>
 
-### Default NgOverlayContainerConfiguration
+# Default NgOverlayContainerConfiguration
 By default the following container configuration is applied if no custom configuration is provided. Any provided panelClass will extend the ng-overlay-container.
 
 ````typescript
