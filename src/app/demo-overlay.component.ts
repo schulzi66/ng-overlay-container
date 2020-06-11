@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgPopoverRef } from 'projects/ng-overlay-container/src/public-api';
+import { NgPopoverRef } from 'ng-overlay-container';
 @Component({
   selector: 'demo-overlay',
   template: `

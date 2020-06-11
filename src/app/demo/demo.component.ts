@@ -1,6 +1,6 @@
 import { HorizontalConnectionPos, VerticalConnectionPos } from '@angular/cdk/overlay';
 import { Component, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
-import { NgOverlayContainerConfiguration, NgOverlayContainerService } from 'projects/ng-overlay-container/src/public-api';
+import { NgOverlayContainerConfiguration, NgOverlayContainerService } from 'ng-overlay-container';
 import { DemoOverlayComponent } from '../demo-overlay.component';
 
 @Component({

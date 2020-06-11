@@ -10,8 +10,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
+import { NgOverlayContainerModule } from 'ng-overlay-container';
 import { MarkdownModule } from 'ngx-markdown';
-import { NgOverlayContainerModule } from 'projects/ng-overlay-container/src/public-api';
 import { AppComponent } from './app.component';
 import { DemoOverlayComponent } from './demo-overlay.component';
 import { DemoComponent } from './demo/demo.component';
@@ -21,19 +21,14 @@ const routes: Routes = [
   {
     path: '',
     redirectTo: 'demo',
-    pathMatch: 'full',
+    pathMatch: 'full'
   },
   { path: 'demo', component: DemoComponent },
-  { path: 'docs', component: DocumentationComponent },
+  { path: 'docs', component: DocumentationComponent }
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    DemoOverlayComponent,
-    DocumentationComponent,
-    DemoComponent,
-  ],
+  declarations: [AppComponent, DemoOverlayComponent, DocumentationComponent, DemoComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -41,7 +36,7 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes, { useHash: true }),
     MarkdownModule.forRoot({
-      loader: HttpClient,
+      loader: HttpClient
     }),
     MatIconModule,
     MatInputModule,
@@ -49,8 +44,8 @@ const routes: Routes = [
     MatRadioModule,
     MatButtonModule,
     HttpClientModule,
-    NgOverlayContainerModule,
+    NgOverlayContainerModule
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}

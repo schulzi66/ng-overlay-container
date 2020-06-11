@@ -1,13 +1,34 @@
 {
   "name": "ng-overlay-container",
-  "version": "0.0.1",
+  "version": "0.0.8",
+  "description": "Making the creation of dynamic overlays a piece of 🍰",
+  "author": "Marius Schulze",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/schulzi66/ng-overlay-container.git"
+  },
+  "bugs": {
+    "url": "https://github.com/schulzi66/ng-overlay-container/issues"
+  },
+  "homepage": "https://github.com/schulzi66/ng-overlay-container",
+  "keywords": [
+    "angular",
+    "cdk",
+    "typescript",
+    "overlay",
+    "container",
+    "material",
+    "popup",
+    "popover"
+  ],
+  "main": "./bundles/ng-overlay-container.umd.js",
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^9.1.9",
-    "@angular/core": "^9.1.9"
-  },
-  "dependencies": {
-},
-"devDependencies": {
-    "tslib": "^1.10.0"      
+    "@angular/core": "^9.1.9",
+    "@angular/cdk": "9.2.4"
+  },  
+  "devDependencies": {
+    "tslib": "^1.10.0"
   }
 }
