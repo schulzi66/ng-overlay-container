@@ -8,8 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:prod": "ng build ng-overlay-container --prod",
-    "publish-lib": "yarn run build:prod && npm publlish ./dist/ng-overlay-container --"
+    "build-lib:prod": "ng build ng-overlay-container --prod"
   },
   "private": true,
   "dependencies": {
