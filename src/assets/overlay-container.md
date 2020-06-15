@@ -1,11 +1,18 @@
 # Import
-Install the PeerDependencies.
+Install the PeerDependencies:
+```json
+"peerDependencies": {
+    "@angular/cdk": "9.2.4",
+    "@angular/common": "9.1.9",
+    "@angular/core": "9.1.9",
+    "@angular/material": "9.2.4"
+}
+```
 
 Add a material theme e.g. a prebuild one (if not done already):
  ```json
 "styles": [        
-    "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-    ...
+    "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",    
 ]
  ```
 

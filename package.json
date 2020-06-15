@@ -12,10 +12,12 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/cdk": "~9.2.1",
-    "@angular/material": "~9.2.1"
-},
-"devDependencies": {
+    "@angular/cdk": "9.2.4",
+    "@angular/common": "9.1.9",
+    "@angular/core": "9.1.9",
+    "@angular/material": "9.2.4"
+  },
+  "devDependencies": {
     "tsickle": "^0.38.1",
     "@angular-devkit/build-angular": "~0.901.7",
     "@angular-devkit/build-ng-packagr": "~0.901.7",
