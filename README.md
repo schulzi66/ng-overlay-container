@@ -21,7 +21,7 @@ Add a material theme e.g. a prebuild one (if not done already):
     "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",    
 ]
  ```
- 
+
 Import the ```NgOverlayContainerModule``` in your ```app.module```:
 
 ```typescript
@@ -33,6 +33,8 @@ import { NgOverlayContainerModule } from 'ng-overlay-container';
     bootstrap: [...]
 })
 ```
+
+
 <br>
 
 ### Usage
