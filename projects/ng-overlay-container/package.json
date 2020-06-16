@@ -1,6 +1,6 @@
 {
   "name": "ng-overlay-container",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Making the creation of dynamic angular cdk overlays a piece of 🍰",
   "author": "Marius Schulze",
   "repository": {
@@ -10,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/schulzi66/ng-overlay-container/issues"
   },
-  "homepage": "https://github.com/schulzi66/ng-overlay-container",
+  "homepage": "https://ng-overlay-container.netlify.app",
   "keywords": [
     "angular",
     "cdk",
