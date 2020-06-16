@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-lib:prod": "yarn run cpy && ng build ng-overlay-container --prod",
+    "build-lib:prod": "yarn run copy-readme && ng build ng-overlay-container --prod",
     "copy-readme": "cpy README.md projects/ng-overlay-container && cpy README.md src/assets"
   },
   "private": true,
