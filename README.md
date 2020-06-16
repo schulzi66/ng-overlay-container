@@ -34,7 +34,6 @@ import { NgOverlayContainerModule } from 'ng-overlay-container';
 })
 ```
 
-
 <br>
 
 ### Usage
@@ -147,7 +146,7 @@ export class YourComponent {
  * Opens an popover relative to the {@param origin} with the provided {@param content}.
  * @param T The data passed into the container to be available in the embedded e.g. component
  * @param R The response data type returned from the afterClosed$ observable when calling close(data?: R)
- * @param origin The origin to which the popover is attached
+ * @param origin The origin to which the popover is attached. If the overlay can't be displayed on the screen, fallback positions are used.
  * @param content The dynamic content to be rendered: 'template' | 'component' | 'text'
  * @param data Any data that is needed in the rendered e.g. component accessible from the component constructor via the NgPopoverRef (DI)
  * @param configuration Any custom overlay configuration
@@ -224,5 +223,39 @@ export const DEFAULT_OVERLAY_CONFIGURATION: NgOverlayContainerConfiguration = {
     overlayY: 'top',
     offsetX: 0,
     offsetY: 10
+}
+````
+<br>
+
+### Order of fallback positions
+
+````typescript
+{
+  // Bottom
+  originX: 'center',
+  originY: 'bottom',
+  overlayX: 'center',
+  overlayY: 'top'
+},
+{
+  // Right
+  originX: 'end',
+  originY: 'center',
+  overlayX: 'start',
+  overlayY: 'center'
+},
+{
+  // Left
+  originX: 'start',
+  originY: 'center',
+  overlayX: 'end',
+  overlayY: 'center'
+},
+{
+  // Top
+  originX: 'center',
+  originY: 'top',
+  overlayX: 'center',
+  overlayY: 'bottom'
 }
 ````

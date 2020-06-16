@@ -50,6 +50,9 @@ export class DemoComponent {
 
   public customPanelClass = 'custom-panel';
 
+  public selectedCommonPosition = 'bottom';
+  public commonPositions = ['bottom', 'right', 'left', 'top'];
+
   constructor(private ngOverlayContainerService: NgOverlayContainerService) {
     this.updateConfig();
   }
@@ -70,6 +73,36 @@ export class DemoComponent {
       offsetX: Number(this.selectedOffsetX),
       offsetY: Number(this.selectedOffsetY)
     };
+  }
+
+  public updateCommonPosition(): void {
+    switch (this.selectedCommonPosition) {
+      case 'bottom':
+        this.selectedOriginX = 'center';
+        this.selectedOriginY = 'bottom';
+        this.selectedOverlayX = 'center';
+        this.selectedOverlayY = 'top';
+        break;
+      case 'right':
+        this.selectedOriginX = 'end';
+        this.selectedOriginY = 'center';
+        this.selectedOverlayX = 'start';
+        this.selectedOverlayY = 'center';
+        break;
+      case 'left':
+        this.selectedOriginX = 'start';
+        this.selectedOriginY = 'center';
+        this.selectedOverlayX = 'end';
+        this.selectedOverlayY = 'center';
+        break;
+      case 'top':
+        this.selectedOriginX = 'center';
+        this.selectedOriginY = 'top';
+        this.selectedOverlayX = 'center';
+        this.selectedOverlayY = 'bottom';
+        break;
+    }
+    this.updateConfig();
   }
 
   /**

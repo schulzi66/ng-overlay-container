@@ -2,7 +2,19 @@
 
   <div style="display: flex; align-items: center; flex-direction: column;">
     <h2>Demo</h2>
-    <p>You can use NgOverlayContainer with either:</p>
+    <p>You can use NgOverlayContainer with either a template, a component or just with a plain text.</p>
+    <p>You can return data from the embedded component to the parent. Returned value from component:</p>
+    <p>{{returnedValue}}</p>
+    <div class="common-positions">
+      <div class="section">
+        <h3>Common positions</h3>
+        <mat-radio-group [(ngModel)]="selectedCommonPosition"
+                         (change)="updateCommonPosition()">
+          <mat-radio-button *ngFor="let position of commonPositions"
+                            [value]="position">{{position}}</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
   </div>
 
 
@@ -44,10 +56,6 @@
        #originText>
       <span>Plain text</span>
     </a>
-  </div>
-
-  <div style="display: flex; align-items: center; flex-direction: column; margin: 40px;">
-    Returned value from component: {{returnedValue}}
   </div>
 
   <div class="config-container">

@@ -10,7 +10,7 @@ import { NgPopoverRef } from 'ng-overlay-container';
           You can pass any component to be displayed into the overlay container.
         </div>
         <div style="margin-bottom: 20px;">
-          You can also pass data to the componet like this number[]:
+          You can also pass data to the component like this number[]:
         </div>
         <div *ngFor="let number of demoInput">
           {{ number }}
