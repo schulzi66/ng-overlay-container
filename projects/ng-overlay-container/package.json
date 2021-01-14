@@ -23,7 +23,9 @@
   ],
   "main": "./bundles/ng-overlay-container.umd.js",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+      "tslib": "^1.9.0"
+  },
   "peerDependencies": {
     "@angular/cdk": "9.2.4",
     "@angular/common": "9.1.9",
