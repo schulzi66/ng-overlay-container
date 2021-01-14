@@ -18,7 +18,7 @@
     "@angular/common": "9.1.9",
     "@angular/core": "9.1.9",
     "@angular/material": "9.2.4",
-    "ng-overlay-container": "latest"
+    "ng-overlay-container": "^0.0.14"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.7",
