@@ -3,15 +3,21 @@
 ```
 Making the creation of dynamic angular cdk overlays a piece of 🍰
 ```
+### Versions
+
+    The major versions reflect the used Angular version
+    10.x.x => Angular 10
+    0.0.x => Angular 9
+
 
 ### Import
 Install the PeerDependencies:
 ```json
 "peerDependencies": {
-    "@angular/cdk": "9.2.4",
-    "@angular/common": "9.1.9",
-    "@angular/core": "9.1.9",
-    "@angular/material": "9.2.4"
+    "@angular/cdk": "10.2.7",
+    "@angular/common": "10.2.4",
+    "@angular/core": "10.2.4",
+    "@angular/material": "10.2.7"
 }
 ```
 
