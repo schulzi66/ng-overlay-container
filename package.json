@@ -14,10 +14,10 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/cdk": "9.2.4",
+    "@angular/cdk": "10.2.7",
     "@angular/common": "10.2.4",
     "@angular/core": "10.2.4",
-    "@angular/material": "9.2.4",
+    "@angular/material": "10.2.7",
     "ng-overlay-container": "^0.0.14"
   },
   "devDependencies": {
