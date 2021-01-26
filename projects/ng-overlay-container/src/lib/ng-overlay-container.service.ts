@@ -24,15 +24,15 @@ export class NgOverlayContainerService {
    * Opens an popover relative to the {@param origin} with the provided {@param content}.
    * @param T The data passed into the container to be available in the embedded e.g. component
    * @param R The response data type returned from the afterClosed$ observable when calling close(data?: R)
-   * @param origin The origin to which the popover is attached. If the overlay can't be displayed on the screen, fallback positions are used
    * @param content The dynamic content to be rendered: 'template' | 'component' | 'text'
+   * @param origin The origin to which the popover is attached. Not needed if used in combination with NgOverlayContainerConfiguration.useGlobalPositionStrategy = true. If the overlay can't be displayed on the screen, fallback positions are used
    * @param data Any data that is needed in the rendered e.g. component accessible from the component constructor via NgPopoverRef (DI)
    * @param configuration Any custom overlay configuration
    * @returns The reference to the NgPopoverRef
    */
   public open<T = any, R = any>({
-    origin,
     content,
+    origin,
     data,
     configuration
   }: NgOverlayContainerParameters<T>): NgPopoverRef<T, R> {

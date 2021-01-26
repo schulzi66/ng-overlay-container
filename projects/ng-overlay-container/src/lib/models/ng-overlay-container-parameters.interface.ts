@@ -5,8 +5,8 @@ import { NgOverlayContainerContent } from './ng-overlay-container-content.type';
  * Parameter structure to open an overlay container
  */
 export interface NgOverlayContainerParameters<T> {
-    origin: HTMLElement;
     content: NgOverlayContainerContent;
+    origin?: HTMLElement;
     data?: T;
     configuration?: NgOverlayContainerConfiguration;
 }

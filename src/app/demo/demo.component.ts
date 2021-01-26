@@ -168,4 +168,14 @@ export class DemoComponent {
       console.log(result);
     });
   }
+
+  /**
+   * Demonstrates ho to use the service to open the overlay unrelated to any origin element by using `NgOverlayContainerConfiguration.useGlobalPositionStrategy = true`
+   */
+  public openWithoutOrigin(): void {
+    const ngPopupRef = this.ngOverlayContainerService.open({
+      content: 'Demonstration Centered',
+      configuration: { useGlobalPositionStrategy: true }
+    });
+  }
 }
