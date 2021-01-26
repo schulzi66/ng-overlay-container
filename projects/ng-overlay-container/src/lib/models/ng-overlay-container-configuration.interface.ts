@@ -9,6 +9,7 @@ export interface NgOverlayContainerConfiguration {
     panelClass?: string;
     hasBackdrop?: boolean;
     backdropClass?: string;
+    useGlobalPositionStrategy?: boolean;
     originX?: HorizontalConnectionPos;
     originY?: VerticalConnectionPos;
     overlayX?: HorizontalConnectionPos;
@@ -24,6 +25,7 @@ export const DEFAULT_OVERLAY_CONFIGURATION: NgOverlayContainerConfiguration = {
     hasBackdrop: true,
     backdropClass: 'cdk-overlay-transparent-backdrop',
     panelClass: 'ng-overlay-container',
+    useGlobalPositionStrategy: false,
     width: '400px',
     height: '500px',
     originX: 'center',

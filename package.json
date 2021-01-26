@@ -19,7 +19,7 @@
     "@angular/common": "10.2.4",
     "@angular/core": "10.2.4",
     "@angular/material": "10.2.7",
-    "ng-overlay-container": "^0.0.14"
+    "ng-overlay-container": "10.0.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1002.1",

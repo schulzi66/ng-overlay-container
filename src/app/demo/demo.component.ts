@@ -19,10 +19,10 @@ export class DemoComponent {
   public overlayConfiguration: NgOverlayContainerConfiguration;
 
   public selectedWidth = '400px';
-  public widths = ['300px', '400px', '500px'];
+  public widths = ['300px', '400px', '500px', '90vw', '100vw', '100%'];
 
   public selectedHeight = '500px';
-  public heights = ['300px', '400px', '500px'];
+  public heights = ['300px', '400px', '500px', '90vh', '100vh', '100%'];
 
   public selectedOriginX: HorizontalConnectionPos = 'center';
   public originXs = ['start', 'center', 'end'];
@@ -50,8 +50,11 @@ export class DemoComponent {
 
   public customPanelClass = 'custom-panel';
 
+  public selectedUseGlobalPositionStrategy = 'false';
+  public useGlobalPositionStrategy = ['true', 'false'];
+
   public selectedCommonPosition = 'bottom';
-  public commonPositions = ['bottom', 'right', 'left', 'top'];
+  public commonPositions = ['bottom', 'right', 'left', 'top', 'overlay'];
 
   constructor(private ngOverlayContainerService: NgOverlayContainerService) {
     this.updateConfig();
@@ -64,6 +67,7 @@ export class DemoComponent {
       hasBackdrop: /true/i.test(this.selectedHasBackdrop),
       backdropClass: this.selectedBackdropClass,
       panelClass: this.customPanelClass,
+      useGlobalPositionStrategy: /true/i.test(this.selectedUseGlobalPositionStrategy),
       width: this.selectedWidth,
       height: this.selectedHeight,
       originX: this.selectedOriginX,
@@ -76,6 +80,8 @@ export class DemoComponent {
   }
 
   public updateCommonPosition(): void {
+    this.selectedWidth = '400px';
+    this.selectedHeight = '500px';
     switch (this.selectedCommonPosition) {
       case 'bottom':
         this.selectedOriginX = 'center';
@@ -101,6 +107,10 @@ export class DemoComponent {
         this.selectedOverlayX = 'center';
         this.selectedOverlayY = 'bottom';
         break;
+      case 'overlay':
+        this.selectedWidth = '90vw';
+        this.selectedHeight = '90vh';
+        this.selectedUseGlobalPositionStrategy = 'true';
     }
     this.updateConfig();
   }

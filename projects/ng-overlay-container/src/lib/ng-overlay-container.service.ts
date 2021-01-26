@@ -64,11 +64,17 @@ export class NgOverlayContainerService {
   }
 
   private getOverlayPosition(origin: HTMLElement, configuration: NgOverlayContainerConfiguration): PositionStrategy {
-    const positionStrategy = this.overlay
-      .position()
-      .flexibleConnectedTo(origin)
-      .withPositions(this.getPositions(configuration))
-      .withPush(false);
+    const positionStrategy = configuration.useGlobalPositionStrategy
+      ? this.overlay
+          .position()
+          .global()
+          .centerHorizontally(configuration.offsetX.toString())
+          .centerVertically(configuration.offsetY.toString())
+      : this.overlay
+          .position()
+          .flexibleConnectedTo(origin)
+          .withPositions(this.getPositions(configuration))
+          .withPush(false);
 
     return positionStrategy;
   }

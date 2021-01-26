@@ -43,7 +43,11 @@ import { NgOverlayContainerModule } from 'ng-overlay-container';
 <br>
 
 ### Usage
-The overlay can be attached to any HTMLElement via #origin
+#### Global
+The overlay can be displayed in the viewport unrelated to any origin element by using `NgOverlayContainerConfiguration.useGlobalPositionStrategy = true`.
+
+#### Flexible
+The overlay can also be attached to any HTMLElement via #origin
 
 
 In your HTML:
@@ -199,6 +203,7 @@ export interface NgOverlayContainerConfiguration {
     panelClass?: string;
     hasBackdrop?: boolean;
     backdropClass?: string;
+    useGlobalPositionStrategy?: boolean;
     originX?: HorizontalConnectionPos;
     originY?: VerticalConnectionPos;
     overlayX?: HorizontalConnectionPos;
@@ -221,6 +226,7 @@ export const DEFAULT_OVERLAY_CONFIGURATION: NgOverlayContainerConfiguration = {
     hasBackdrop: true,
     backdropClass: 'cdk-overlay-transparent-backdrop',
     panelClass: 'ng-overlay-container',
+    useGlobalPositionStrategy: false,
     width: '400px',
     height: '500px',
     originX: 'center',
