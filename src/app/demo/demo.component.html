@@ -141,5 +141,14 @@
           {{backdropClass}}</mat-radio-button>
       </mat-radio-group>
     </div>
+    <div class="div11 section">
+      <h3>UseGlobalPositionStrategy</h3>
+      <mat-radio-group [(ngModel)]="selectedUseGlobalPositionStrategy"
+                       (change)="updateConfig()">
+        <mat-radio-button *ngFor="let useGlobal of useGlobalPositionStrategy"
+                          [value]="useGlobal">
+          {{useGlobal}}</mat-radio-button>
+      </mat-radio-group>
+    </div>
   </div>
 </div>
