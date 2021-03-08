@@ -21,7 +21,7 @@ export class DemoComponent {
   public selectedWidth = '400px';
   public widths = ['300px', '400px', '500px', '90vw', '100vw', '100%'];
 
-  public selectedHeight = '500px';
+  public selectedHeight = '300px';
   public heights = ['300px', '400px', '500px', '90vh', '100vh', '100%'];
 
   public selectedOriginX: HorizontalConnectionPos = 'center';
@@ -53,6 +53,9 @@ export class DemoComponent {
   public selectedUseGlobalPositionStrategy = 'false';
   public useGlobalPositionStrategy = ['true', 'false'];
 
+  public selectedIsDraggable = 'false';
+  public isDraggable = ['true', 'false'];
+
   public selectedCommonPosition = 'bottom';
   public commonPositions = ['bottom', 'right', 'left', 'top', 'overlay'];
 
@@ -75,13 +78,14 @@ export class DemoComponent {
       overlayX: this.selectedOverlayX,
       overlayY: this.selectedOverlayY,
       offsetX: Number(this.selectedOffsetX),
-      offsetY: Number(this.selectedOffsetY)
+      offsetY: Number(this.selectedOffsetY),
+      isDraggable: /true/i.test(this.selectedIsDraggable)
     };
   }
 
   public updateCommonPosition(): void {
     this.selectedWidth = '400px';
-    this.selectedHeight = '500px';
+    this.selectedHeight = '300px';
     switch (this.selectedCommonPosition) {
       case 'bottom':
         this.selectedOriginX = 'center';
@@ -120,13 +124,13 @@ export class DemoComponent {
    * @param content Reference to the ng-template
    */
   public openTemplate(content: TemplateRef<any>): void {
-    const ngPopupRef = this.ngOverlayContainerService.open({
+    const ngPopoverRef = this.ngOverlayContainerService.open({
       content,
       origin: this.originTemplate.element.nativeElement,
       configuration: this.overlayConfiguration
     });
 
-    ngPopupRef.afterClosed$.subscribe((result) => {
+    ngPopoverRef.afterClosed$.subscribe((result) => {
       console.log('Returned value:');
       console.log(result);
     });
@@ -137,7 +141,7 @@ export class DemoComponent {
    * Make sure to include the Component (in this case DemoOverlayComponent) as entryComponent in your module
    */
   public openComponent(): void {
-    const ngPopupRef = this.ngOverlayContainerService.open<{ demoInput: number[] }, { returnValue: string }>({
+    const ngPopoverRef = this.ngOverlayContainerService.open<{ demoInput: number[] }, { returnValue: string }>({
       content: DemoOverlayComponent,
       data: {
         demoInput: [1, 2, 3, 4]
@@ -146,7 +150,7 @@ export class DemoComponent {
       configuration: this.overlayConfiguration
     });
 
-    ngPopupRef.afterClosed$.subscribe((result) => {
+    ngPopoverRef.afterClosed$.subscribe((result) => {
       if (result.data) {
         this.returnedValue = result.data.returnValue;
       }
@@ -157,13 +161,13 @@ export class DemoComponent {
    * Demonstrates how to use the service with a plain text
    */
   public openText(): void {
-    const ngPopupRef = this.ngOverlayContainerService.open({
+    const ngPopoverRef = this.ngOverlayContainerService.open({
       content: 'Hello World 🌍🚀',
       origin: this.originText.element.nativeElement,
       configuration: this.overlayConfiguration
     });
 
-    ngPopupRef.afterClosed$.subscribe((result) => {
+    ngPopoverRef.afterClosed$.subscribe((result) => {
       console.log('Returned value:');
       console.log(result);
     });
@@ -173,7 +177,7 @@ export class DemoComponent {
    * Demonstrates ho to use the service to open the overlay unrelated to any origin element by using `NgOverlayContainerConfiguration.useGlobalPositionStrategy = true`
    */
   public openWithoutOrigin(): void {
-    const ngPopupRef = this.ngOverlayContainerService.open({
+    const ngPopoverRef = this.ngOverlayContainerService.open({
       content: 'Demonstration Centered',
       configuration: { useGlobalPositionStrategy: true }
     });

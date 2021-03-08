@@ -16,6 +16,7 @@ export interface NgOverlayContainerConfiguration {
     overlayY?: VerticalConnectionPos;
     offsetX?: number;
     offsetY?: number;
+    isDraggable?: boolean;
 }
 
 /**
@@ -33,5 +34,6 @@ export const DEFAULT_OVERLAY_CONFIGURATION: NgOverlayContainerConfiguration = {
     overlayX: 'center',
     overlayY: 'top',
     offsetX: 0,
-    offsetY: 10
+    offsetY: 10,
+    isDraggable: false
 };

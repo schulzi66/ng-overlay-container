@@ -36,13 +36,15 @@ export class NgOverlayContainerService {
     data,
     configuration
   }: NgOverlayContainerParameters<T>): NgPopoverRef<T, R> {
-    const overlayRef = this.overlay.create(this.getOverlayConfig(origin, configuration));
+    const overlayRef = this.overlay.create(
+      this.getOverlayConfig(origin, { ...DEFAULT_OVERLAY_CONFIGURATION, ...configuration })
+    );
 
     if (configuration?.panelClass) {
       overlayRef.addPanelClass(configuration.panelClass);
     }
 
-    const ngPopoverRef = new NgPopoverRef<T, R>(overlayRef, content, data);
+    const ngPopoverRef = new NgPopoverRef<T, R>(overlayRef, content, data, configuration.isDraggable);
 
     const injector = this.createInjector(ngPopoverRef, this.injector);
     overlayRef.attach(new ComponentPortal(NgPopoverComponent, null, injector));
@@ -51,7 +53,6 @@ export class NgOverlayContainerService {
   }
 
   private getOverlayConfig(origin: HTMLElement, configuration: NgOverlayContainerConfiguration): OverlayConfig {
-    configuration = { ...DEFAULT_OVERLAY_CONFIGURATION, ...configuration };
     return new OverlayConfig({
       width: configuration.width,
       height: configuration.height,

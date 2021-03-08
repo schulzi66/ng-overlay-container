@@ -83,17 +83,17 @@ export class YourComponent {
     public showText(): void {
 
         /**
-         * Opens the ngPopupRef 
+         * Opens the ngPopoverRef 
          */
-        const ngPopupRef = this.overlayContainerService.open({
+        const ngPopoverRef = this.overlayContainerService.open({
             content: 'Hello World 🌍🚀',
             origin: this.origin.element.nativeElement            
         });
 
         /**
-         * The ngPopupRef can be used to get data back from the component
+         * The ngPopoverRef can be used to get data back from the component
          */
-        ngPopupRef.afterClosed$.subscribe(result => {
+        ngPopoverRef.afterClosed$.subscribe(result => {
             console.log(result);
         });
     }
@@ -104,12 +104,12 @@ export class YourComponent {
      */
     public showTemplate(content: TemplateRef<any>): void {
         
-        const ngPopupRef = this.overlayContainerService.open({
+        const ngPopoverRef = this.overlayContainerService.open({
             content,
             origin: this.origin.element.nativeElement            
         });
         
-        ngPopupRef.afterClosed$.subscribe(result => {
+        ngPopoverRef.afterClosed$.subscribe(result => {
             ...
         });
     }
@@ -125,7 +125,7 @@ export class YourComponent {
          * @param T The data passed into the container to be available in the embedded e.g. component
          * @param R The response data type returned from the afterClosed$ observable when calling close(data?: R)
          */
-        const ngPopupRef = this.overlayContainerService.open<{ demoInput: number[] }, { returnValue: string }>({
+        const ngPopoverRef = this.overlayContainerService.open<{ demoInput: number[] }, { returnValue: string }>({
             content: DemoOverlayComponent,
             origin: this.origin.element.nativeElement,
             data: {
@@ -138,18 +138,23 @@ export class YourComponent {
         /**
          * Retrieve stongly typed return values
          */
-        ngPopupRef.afterClosed$.subscribe(result => {
+        ngPopoverRef.afterClosed$.subscribe(result => {
             if (result.data) {
                 this.returnedValue = result.data.returnValue;
             }
         });
+
+        /**
+         * Resize e.g. maximize the popover
+         */
+        ngPopoverRef.resize('100%', '100%');
     }
 
     /**
     * Demonstrates ho to use the service to open the overlay unrelated to any origin element by using `NgOverlayContainerConfiguration.useGlobalPositionStrategy = true`
     */
     public showWithoutOrigin(): void {
-        const ngPopupRef = this.ngOverlayContainerService.open({
+        const ngPopoverRef = this.ngOverlayContainerService.open({
             content: 'Demonstration Centered',
             configuration: {useGlobalPositionStrategy: true}
         });
@@ -220,6 +225,7 @@ export interface NgOverlayContainerConfiguration {
     overlayY?: VerticalConnectionPos;
     offsetX?: number;
     offsetY?: number;
+    isDraggable?: boolean;
 }
 ````
 <br>
@@ -244,7 +250,8 @@ export const DEFAULT_OVERLAY_CONFIGURATION: NgOverlayContainerConfiguration = {
     overlayX: 'center',
     overlayY: 'top',
     offsetX: 0,
-    offsetY: 10
+    offsetY: 10,
+    isDraggable: false
 }
 ````
 <br>

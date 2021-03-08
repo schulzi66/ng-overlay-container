@@ -15,11 +15,13 @@ export class NgPopoverComponent implements OnInit {
     public ngRenderMethod: NgPopoverRenderMethod;
     public content: NgOverlayContainerContent;
     public context: { close: any };
+    public isDraggable?: boolean;
 
     public constructor(private ngPopoverRef: NgPopoverRef) {}
 
     ngOnInit() {
         this.content = this.ngPopoverRef.content;
+        this.isDraggable = this.ngPopoverRef.isDraggable;
 
         if (typeof this.content === 'string') {
             this.ngRenderMethod = 'text';

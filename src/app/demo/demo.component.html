@@ -150,5 +150,14 @@
           {{useGlobal}}</mat-radio-button>
       </mat-radio-group>
     </div>
+    <div class="div12 section">
+      <h3>IsDraggable</h3>
+      <mat-radio-group [(ngModel)]="selectedIsDraggable"
+                       (change)="updateConfig()">
+        <mat-radio-button *ngFor="let draggable of isDraggable"
+                          [value]="draggable">{{draggable}}
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
   </div>
 </div>

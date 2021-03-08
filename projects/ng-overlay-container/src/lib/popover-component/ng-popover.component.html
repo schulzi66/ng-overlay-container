@@ -1,4 +1,7 @@
-<div id="ng-popover"
+<div cdkDrag
+     cdkDragRootElement=".cdk-overlay-pane"
+     [cdkDragDisabled]="!isDraggable"
+     id="ng-popover"
      class="ng-popover">
   <ng-container [ngSwitch]="ngRenderMethod">
 
