@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build",
     "build:prod": "yarn run copy-readme && ng build --prod",
-    "test": "ng test",
+    "test": "ng test ng-overlay-container",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build-lib:prod": "yarn run copy-readme && ng build ng-overlay-container --prod",
@@ -19,7 +19,7 @@
     "@angular/common": "10.2.4",
     "@angular/core": "10.2.4",
     "@angular/material": "10.2.7",
-    "ng-overlay-container": "10.0.4"
+    "ng-overlay-container": "10.0.5"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1002.1",

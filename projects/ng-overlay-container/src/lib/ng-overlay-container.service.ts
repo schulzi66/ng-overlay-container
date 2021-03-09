@@ -44,7 +44,7 @@ export class NgOverlayContainerService {
       overlayRef.addPanelClass(configuration.panelClass);
     }
 
-    const ngPopoverRef = new NgPopoverRef<T, R>(overlayRef, content, data, configuration.isDraggable);
+    const ngPopoverRef = new NgPopoverRef<T, R>(overlayRef, content, data, configuration?.isDraggable ?? DEFAULT_OVERLAY_CONFIGURATION.isDraggable);
 
     const injector = this.createInjector(ngPopoverRef, this.injector);
     overlayRef.attach(new ComponentPortal(NgPopoverComponent, null, injector));
