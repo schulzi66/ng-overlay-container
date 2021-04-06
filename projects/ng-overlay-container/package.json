@@ -1,6 +1,6 @@
 {
   "name": "ng-overlay-container",
-  "version": "10.0.5",
+  "version": "10.0.6",
   "description": "Making the creation of dynamic angular cdk overlays a piece of 🍰",
   "author": "Marius Schulze",
   "repository": {
