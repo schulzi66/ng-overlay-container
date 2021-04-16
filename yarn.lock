@@ -6147,10 +6147,10 @@ next-tick@~1.0.0:
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
-ng-overlay-container@10.0.4:
-  version "10.0.4"
-  resolved "https://registry.yarnpkg.com/ng-overlay-container/-/ng-overlay-container-10.0.4.tgz#a9f416ed0e399ab940f90f1251b8df8c09ab9490"
-  integrity sha512-IZglSTr1iSI/ARpsGUOpzfJh1MFeBacHPZhQptNRcyvhhu0juQSZ5nGdbX8E47syoz9n/INsoZWLSG9Nrbqyew==
+ng-overlay-container@10.0.7:
+  version "10.0.7"
+  resolved "https://registry.yarnpkg.com/ng-overlay-container/-/ng-overlay-container-10.0.7.tgz#0047da97dabb7870ecf69f48eeabecab3cc43260"
+  integrity sha512-ls3exOrHsGbIbL4K6o8JB0M+rhGN0aQ+FLlgdAFOYjMu1qmyBgLmAIwpYNhYhqCCCJDQ/hBBw81JEW6kx1bjcg==
   dependencies:
     tslib "^2.0.0"
 
