@@ -56,6 +56,9 @@ export class DemoComponent {
   public selectedIsDraggable = 'false';
   public isDraggable = ['true', 'false'];
 
+  public selectedIsResizable = 'true';
+  public isResizable = ['true', 'false'];
+
   public selectedCommonPosition = 'bottom';
   public commonPositions = ['bottom', 'right', 'left', 'top', 'overlay'];
 
@@ -79,13 +82,15 @@ export class DemoComponent {
       overlayY: this.selectedOverlayY,
       offsetX: Number(this.selectedOffsetX),
       offsetY: Number(this.selectedOffsetY),
-      isDraggable: /true/i.test(this.selectedIsDraggable)
+      isDraggable: /true/i.test(this.selectedIsDraggable),
+      isResizable: /true/i.test(this.selectedIsResizable)
     };
   }
 
   public updateCommonPosition(): void {
     this.selectedWidth = '400px';
     this.selectedHeight = '300px';
+    this.selectedUseGlobalPositionStrategy = 'false';
     switch (this.selectedCommonPosition) {
       case 'bottom':
         this.selectedOriginX = 'center';

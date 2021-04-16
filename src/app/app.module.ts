@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSelectModule } from '@angular/material/select';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
@@ -43,7 +44,8 @@ const routes: Routes = [
     MatSidenavModule,
     MatRadioModule,
     MatButtonModule,
-    HttpClientModule,
+    MatSelectModule,
+    HttpClientModule,    
     NgOverlayContainerModule
   ],
   bootstrap: [AppComponent]

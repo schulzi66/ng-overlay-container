@@ -12,7 +12,8 @@
     "build-lib:prod": "yarn run copy-readme && ng build ng-overlay-container --prod",
     "copy-readme": "cpy README.md projects/ng-overlay-container && cpy README.md src/assets",
     "npm-publish": "npm publish ./dist/ng-overlay-container",
-    "deploy:pipeline": "yarn run build-lib:prod && yarn publish ./dist/ng-overlay-container"
+    "deploy:pipeline": "yarn run build-lib:prod && yarn publish ./dist/ng-overlay-container",
+    "postinstall": "ngcc"
   },
   "private": true,
   "dependencies": {
@@ -20,7 +21,7 @@
     "@angular/common": "10.2.4",
     "@angular/core": "10.2.4",
     "@angular/material": "10.2.7",
-    "ng-overlay-container": "10.0.6"
+    "ng-overlay-container": "10.0.7"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1002.1",

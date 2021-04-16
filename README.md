@@ -230,6 +230,7 @@ export interface NgOverlayContainerConfiguration {
     offsetX?: number;
     offsetY?: number;
     isDraggable?: boolean;
+    isResizable?: boolean;
 }
 ````
 <br>
@@ -255,7 +256,8 @@ export const DEFAULT_OVERLAY_CONFIGURATION: NgOverlayContainerConfiguration = {
     overlayY: 'top',
     offsetX: 0,
     offsetY: 10,
-    isDraggable: false
+    isDraggable: false,
+    isResizable: true
 }
 ````
 <br>
