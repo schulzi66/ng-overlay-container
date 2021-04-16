@@ -10,6 +10,7 @@ Making the creation of dynamic angular cdk overlays a piece of 🍰
 ### Versions
 
     The major versions reflect the used Angular version
+    11.x.x => Angular 11
     10.x.x => Angular 10
     0.0.x => Angular 9
 
