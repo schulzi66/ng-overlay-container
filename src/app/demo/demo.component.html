@@ -27,11 +27,13 @@
       <span>A template </span>
 
       <ng-template #template
+                   let-data="data"
                    let-close="close">
         <div style="display: flex; flex-direction: column; height: 100%;">
           <div style="flex: 1;">
             <h2>This is a Template</h2>
             <div>This is an example with utilizing ng-template.</div>
+            <div>This is data passed to the template: {{data}}</div>
           </div>
           <button mat-stroked-button
                   color="primary"

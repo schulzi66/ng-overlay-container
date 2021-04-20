@@ -5,7 +5,7 @@
 # NgOverlayContainer
 
 ```
-Making the creation of dynamic angular cdk overlays a piece of 🍰
+Making the creation of overlays a piece of 🍰
 ```
 ### Versions
 
@@ -62,9 +62,11 @@ In your HTML:
         (click)="showTemplate(template)">Click me</button>
 
 <ng-template #template
+             let-data="data"
              let-close="close">
     <h2>This is a Template</h2>
     <div>This is an example with utilizing ng-template.</div>
+    <div>This is data passed to the template: {{data}}</div>
     <button mat-button
             (click)="close({id: 2})">
         Close</button>
@@ -109,8 +111,9 @@ export class YourComponent {
      */
     public showTemplate(content: TemplateRef<any>): void {
         
-        const ngPopoverRef = this.overlayContainerService.open({
+        const ngPopoverRef = this.overlayContainerService.open<string, { id: number }>({
             content,
+            data: 'Demo Dummy',
             origin: this.origin.element.nativeElement            
         });
         
@@ -178,7 +181,7 @@ export class YourComponent {
  * @param R The response data type returned from the afterClosed$ observable when calling close(data?: R)
  * @param content The dynamic content to be rendered: 'template' | 'component' | 'text'
  * @param origin The origin to which the popover is attached. Not needed if used in combination with NgOverlayContainerConfiguration.useGlobalPositionStrategy = true. If the overlay can't be displayed on the screen, fallback positions are used
- * @param data Any data that is needed in the rendered e.g. component accessible from the component constructor via the NgPopoverRef (DI)
+ * @param data Any data that is needed in the rendered component (accessible from the component constructor via the PopoverRef (DI)) or in the template via template variable let-data
  * @param configuration Any custom overlay configuration
  * @returns The reference to the NgPopoverRef
  */
