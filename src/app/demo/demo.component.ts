@@ -129,8 +129,9 @@ export class DemoComponent {
    * @param content Reference to the ng-template
    */
   public openTemplate(content: TemplateRef<any>): void {
-    const ngPopoverRef = this.ngOverlayContainerService.open({
+    const ngPopoverRef = this.ngOverlayContainerService.open<string, { id: number }>({
       content,
+      data: 'Demo Dummy',
       origin: this.originTemplate.element.nativeElement,
       configuration: this.overlayConfiguration
     });

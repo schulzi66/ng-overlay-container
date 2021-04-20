@@ -14,9 +14,7 @@ import { NgPopoverComponent } from './popover-component/ng-popover.component';
  * where anything from text, component or template can be embedded dynamically.
  *
  */
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class NgOverlayContainerService {
   public constructor(private overlay: Overlay, private injector: Injector) {}
 
@@ -26,7 +24,7 @@ export class NgOverlayContainerService {
    * @param R The response data type returned from the afterClosed$ observable when calling close(data?: R)
    * @param content The dynamic content to be rendered: 'template' | 'component' | 'text'
    * @param origin The origin to which the popover is attached. Not needed if used in combination with NgOverlayContainerConfiguration.useGlobalPositionStrategy = true. If the overlay can't be displayed on the screen, fallback positions are used
-   * @param data Any data that is needed in the rendered e.g. component accessible from the component constructor via NgPopoverRef (DI)
+   * @param data Any data that is needed in the rendered component (accessible from the component constructor via the PopoverRef (DI)) or in the template via template variable let-data
    * @param configuration Any custom overlay configuration
    * @returns The reference to the NgPopoverRef
    */
@@ -36,15 +34,14 @@ export class NgOverlayContainerService {
     data,
     configuration
   }: NgOverlayContainerParameters<T>): NgPopoverRef<T, R> {
-    const overlayRef = this.overlay.create(
-      this.getOverlayConfig(origin, { ...DEFAULT_OVERLAY_CONFIGURATION, ...configuration })
-    );
+    const configurationApplied = { ...DEFAULT_OVERLAY_CONFIGURATION, ...configuration };
+    const overlayRef = this.overlay.create(this.getOverlayConfig(origin, configurationApplied));
 
     if (configuration?.panelClass) {
       overlayRef.addPanelClass(configuration.panelClass);
     }
 
-    if (configuration?.isResizable) {
+    if (configurationApplied?.isResizable) {
       overlayRef.addPanelClass('isResizable');
     }
 

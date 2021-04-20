@@ -14,7 +14,7 @@ import { NgPopoverRef } from './ng-popover-reference';
 export class NgPopoverComponent implements OnInit {
     public ngRenderMethod: NgPopoverRenderMethod;
     public content: NgOverlayContainerContent;
-    public context: { close: any };
+    public context: { data: any; close: any };
     public isDraggable?: boolean;
 
     public constructor(private ngPopoverRef: NgPopoverRef) {}
@@ -28,6 +28,7 @@ export class NgPopoverComponent implements OnInit {
         } else if (this.content instanceof TemplateRef) {
             this.ngRenderMethod = 'template';
             this.context = {
+                data: this.ngPopoverRef.data,
                 close: this.ngPopoverRef.close.bind(this.ngPopoverRef)
             };
         } else {
