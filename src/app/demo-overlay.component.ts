@@ -4,7 +4,7 @@ import { NgPopoverRef } from 'ng-overlay-container';
   selector: 'demo-overlay',
   template: `
     <button style="float: right;" mat-icon-button color="primary" (click)="maximize()">
-      <mat-icon>fullscreen</mat-icon>
+      <mat-icon>{{ resizeIcon }}</mat-icon>
     </button>
     <div style="display: flex; flex-direction: column; height: 100%;">
       <div style="flex: 1;">
@@ -26,6 +26,8 @@ import { NgPopoverRef } from 'ng-overlay-container';
   `
 })
 export class DemoOverlayComponent {
+  private isExpanded: boolean;
+
   public demoInput: number[];
   public valueTextField = '';
 
@@ -35,7 +37,12 @@ export class DemoOverlayComponent {
       returnValue: string;
     }>
   ) {
+    this.isExpanded = false;
     this.demoInput = this.popoverRef.data.demoInput;
+  }
+
+  public get resizeIcon(): string {
+    return this.isExpanded ? 'fullscreen_exit' : 'fullscreen';
   }
 
   public close() {
@@ -43,6 +50,7 @@ export class DemoOverlayComponent {
   }
 
   public maximize() {
-    this.popoverRef.resize('100%', '100%');
+    this.popoverRef.toggleMaximize();
+    this.isExpanded = !this.isExpanded;
   }
 }

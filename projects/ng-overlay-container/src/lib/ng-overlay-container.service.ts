@@ -46,10 +46,12 @@ export class NgOverlayContainerService {
     }
 
     const ngPopoverRef = new NgPopoverRef<T, R>(
+      this.overlay,
       overlayRef,
       content,
       data,
-      configuration?.isDraggable ?? DEFAULT_OVERLAY_CONFIGURATION.isDraggable
+      configuration?.isDraggable ?? DEFAULT_OVERLAY_CONFIGURATION.isDraggable,
+      configuration?.disableBackdropClose ?? DEFAULT_OVERLAY_CONFIGURATION.disableBackdropClose
     );
 
     const injector = this.createInjector(ngPopoverRef, this.injector);
@@ -59,7 +61,7 @@ export class NgOverlayContainerService {
   }
 
   private getOverlayConfig(origin: HTMLElement, configuration: NgOverlayContainerConfiguration): OverlayConfig {
-    return new OverlayConfig({
+    const config = new OverlayConfig({
       width: configuration.width,
       height: configuration.height,
       hasBackdrop: configuration.hasBackdrop,
@@ -67,6 +69,13 @@ export class NgOverlayContainerService {
       backdropClass: configuration.backdropClass,
       positionStrategy: this.getOverlayPosition(origin, configuration),
       scrollStrategy: this.overlay.scrollStrategies.reposition()
+    });
+
+    return Object.assign(config, {
+      ...(configuration.minWidth && { minWidth: configuration.minWidth }),
+      ...(configuration.minHeight && { minHeight: configuration.minHeight })
+      // ...(configuration.maxWidth && { maxWidth: configuration.maxWidth }),
+      // ...(configuration.maxHeight && { maxHeight: configuration.maxHeight })
     });
   }
 

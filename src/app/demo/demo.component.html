@@ -61,7 +61,7 @@
   </div>
 
   <div class="config-container">
-    <div class="div1 section">
+    <div class="section">
       <mat-form-field appearance="outline">
         <mat-label>Width</mat-label>
         <mat-select [(ngModel)]="selectedWidth"
@@ -71,7 +71,7 @@
         </mat-select>
       </mat-form-field>
     </div>
-    <div class="div2 section">
+    <div class="section">
       <mat-form-field appearance="outline">
         <mat-label>Height</mat-label>
         <mat-select [(ngModel)]="selectedHeight"
@@ -81,7 +81,47 @@
         </mat-select>
       </mat-form-field>
     </div>
-    <div class="div3 section">
+    <div class="section">
+      <mat-form-field appearance="outline">
+        <mat-label>MinWidth</mat-label>
+        <mat-select [(ngModel)]="selectedMinWidth"
+                    (selectionChange)="updateConfig()">
+          <mat-option *ngFor="let width of minWidths"
+                      [value]="width">{{width}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="section">
+      <mat-form-field appearance="outline">
+        <mat-label>MinHeight</mat-label>
+        <mat-select [(ngModel)]="selectedMinHeight"
+                    (selectionChange)="updateConfig()">
+          <mat-option *ngFor="let height of minHeights"
+                      [value]="height">{{height}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <!-- <div class="section">
+      <mat-form-field appearance="outline">
+        <mat-label>MaxWidth</mat-label>
+        <mat-select [(ngModel)]="selectedMaxWidth"
+                    (selectionChange)="updateConfig()">
+          <mat-option *ngFor="let maxWidth of maxWidths"
+                      [value]="maxWidth">{{maxWidth}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="section">
+      <mat-form-field appearance="outline">
+        <mat-label>MaxHeight</mat-label>
+        <mat-select [(ngModel)]="selectedMaxHeight"
+                    (selectionChange)="updateConfig()">
+          <mat-option *ngFor="let maxHeight of maxHeights"
+                      [value]="maxHeight">{{maxHeight}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div> -->
+    <div class="section">
       <mat-form-field appearance="outline">
         <mat-label>OriginX</mat-label>
         <mat-select [(ngModel)]="selectedOriginX"
@@ -91,7 +131,7 @@
         </mat-select>
       </mat-form-field>
     </div>
-    <div class="div4 section">
+    <div class="section">
       <mat-form-field appearance="outline">
         <mat-label>OriginY</mat-label>
         <mat-select [(ngModel)]="selectedOriginY"
@@ -101,7 +141,7 @@
         </mat-select>
       </mat-form-field>
     </div>
-    <div class="div5 section">
+    <div class="section">
       <mat-form-field appearance="outline">
         <mat-label>OverlayX</mat-label>
         <mat-select [(ngModel)]="selectedOverlayX"
@@ -111,7 +151,7 @@
         </mat-select>
       </mat-form-field>
     </div>
-    <div class="div6 section">
+    <div class="section">
       <mat-form-field appearance="outline">
         <mat-label>OverlayY</mat-label>
         <mat-select [(ngModel)]="selectedOverlayY"
@@ -121,7 +161,7 @@
         </mat-select>
       </mat-form-field>
     </div>
-    <div class="div7 section">
+    <div class="section">
       <mat-form-field appearance="outline">
         <mat-label>OffsetX in px</mat-label>
         <mat-select [(ngModel)]="selectedOffsetX"
@@ -131,7 +171,7 @@
         </mat-select>
       </mat-form-field>
     </div>
-    <div class="div8 section">
+    <div class="section">
       <mat-form-field appearance="outline">
         <mat-label>OffsetY in px</mat-label>
         <mat-select [(ngModel)]="selectedOffsetY"
@@ -143,7 +183,7 @@
     </div>
   </div>
   <div class="config-container right">
-    <div class="div9 section">
+    <div class="section">
       <mat-form-field appearance="outline">
         <mat-label>HasBackdrop</mat-label>
         <mat-select [(ngModel)]="selectedHasBackdrop"
@@ -154,7 +194,7 @@
         </mat-select>
       </mat-form-field>
     </div>
-    <div class="div10 section">
+    <div class="section">
       <mat-form-field appearance="outline">
         <mat-label>BackdropClass</mat-label>
         <mat-select [(ngModel)]="selectedBackdropClass"
@@ -165,7 +205,7 @@
         </mat-select>
       </mat-form-field>
     </div>
-    <div class="div11 section">
+    <div class="section">
       <mat-form-field appearance="outline">
         <mat-label>UseGlobalPositionStrategy</mat-label>
         <mat-select [(ngModel)]="selectedUseGlobalPositionStrategy"
@@ -176,7 +216,7 @@
         </mat-select>
       </mat-form-field>
     </div>
-    <div class="div12 section">
+    <div class="section">
       <mat-form-field appearance="outline">
         <mat-label>IsDraggable</mat-label>
         <mat-select [(ngModel)]="selectedIsDraggable"
@@ -187,13 +227,24 @@
         </mat-select>
       </mat-form-field>
     </div>
-    <div class="div13 section">
+    <div class="section">
       <mat-form-field appearance="outline">
         <mat-label>IsResizable</mat-label>
         <mat-select [(ngModel)]="selectedIsResizable"
                     (selectionChange)="updateConfig()">
           <mat-option *ngFor="let resizable of isResizable"
                       [value]="resizable">{{resizable}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="section">
+      <mat-form-field appearance="outline">
+        <mat-label>DisableCloseOnBackdropClick</mat-label>
+        <mat-select [(ngModel)]="selectedDisableBackdropClose"
+                    (selectionChange)="updateConfig()">
+          <mat-option *ngFor="let disable of disableBackdropClose"
+                      [value]="disable">{{disable}}
           </mat-option>
         </mat-select>
       </mat-form-field>

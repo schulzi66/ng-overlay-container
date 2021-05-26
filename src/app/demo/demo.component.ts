@@ -24,6 +24,18 @@ export class DemoComponent {
   public selectedHeight = '300px';
   public heights = ['300px', '400px', '500px', '90vh', '100vh', '100%'];
 
+  public selectedMinWidth = undefined;
+  public minWidths = ['300px', '400px', '500px', '90vw', '100vw', '100%'];
+
+  public selectedMinHeight = undefined;
+  public minHeights = ['300px', '400px', '500px', '90vw', '100vw', '100%'];
+
+  // public selectedMaxWidth = undefined;
+  // public maxWidths = ['300px', '400px', '500px', '90vw', '100vw', '100%'];
+
+  // public selectedMaxHeight = undefined;
+  // public maxHeights = ['300px', '400px', '500px', '90vw', '100vw', '100%'];
+
   public selectedOriginX: HorizontalConnectionPos = 'center';
   public originXs = ['start', 'center', 'end'];
 
@@ -59,6 +71,9 @@ export class DemoComponent {
   public selectedIsResizable = 'true';
   public isResizable = ['true', 'false'];
 
+  public selectedDisableBackdropClose = 'false';
+  public disableBackdropClose = ['true', 'false'];
+
   public selectedCommonPosition = 'bottom';
   public commonPositions = ['bottom', 'right', 'left', 'top', 'overlay'];
 
@@ -76,6 +91,10 @@ export class DemoComponent {
       useGlobalPositionStrategy: /true/i.test(this.selectedUseGlobalPositionStrategy),
       width: this.selectedWidth,
       height: this.selectedHeight,
+      minWidth: this.selectedMinWidth,
+      minHeight: this.selectedMinHeight,
+      // maxWidth: this.selectedMaxWidth,
+      // maxHeight: this.selectedMaxHeight,
       originX: this.selectedOriginX,
       originY: this.selectedOriginY,
       overlayX: this.selectedOverlayX,
@@ -83,7 +102,8 @@ export class DemoComponent {
       offsetX: Number(this.selectedOffsetX),
       offsetY: Number(this.selectedOffsetY),
       isDraggable: /true/i.test(this.selectedIsDraggable),
-      isResizable: /true/i.test(this.selectedIsResizable)
+      isResizable: /true/i.test(this.selectedIsResizable),
+      disableBackdropClose: /true/i.test(this.selectedDisableBackdropClose)
     };
   }
 

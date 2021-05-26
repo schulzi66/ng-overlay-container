@@ -153,9 +153,16 @@ export class YourComponent {
         });
 
         /**
-         * Resize e.g. maximize the popover
+         * Resize the popover
          */
         ngPopoverRef.resize('100%', '100%');
+
+        
+        /**
+         * Toggle maximize of the popover
+         */
+        popoverRef.toggleMaximize();
+        
     }
 
     /**
@@ -223,6 +230,8 @@ export type NgOverlayContainerContent = TemplateRef<any> | Type<any> | string;
 export interface NgOverlayContainerConfiguration {
     width?: string;
     height?: string;
+    minWidth?: number | string;
+    minHeight?: number | string;
     panelClass?: string;
     hasBackdrop?: boolean;
     backdropClass?: string;
@@ -235,6 +244,7 @@ export interface NgOverlayContainerConfiguration {
     offsetY?: number;
     isDraggable?: boolean;
     isResizable?: boolean;
+    disableBackdropClose?: boolean;
 }
 ````
 <br>
@@ -261,7 +271,8 @@ export const DEFAULT_OVERLAY_CONFIGURATION: NgOverlayContainerConfiguration = {
     offsetX: 0,
     offsetY: 10,
     isDraggable: false,
-    isResizable: true
+    isResizable: true,
+    disableBackdropClose: false
 }
 ````
 <br>

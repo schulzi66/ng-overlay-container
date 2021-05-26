@@ -19,6 +19,27 @@ export interface NgOverlayContainerConfiguration {
   height?: string;
 
   /**
+   * The min-width of the overlay panel. If a number is provided, pixel units are assumed.
+   */
+  minWidth?: number | string;
+
+  /**
+   * The min-height of the overlay panel. If a number is provided, pixel units are assumed.
+   */
+  minHeight?: number | string;
+
+  // Currently there is an issue in the Angular CDK that messes up the maxWidth and maxHeight when using FlexibleConnectedPositionStrategy 
+  // /**
+  //  * The max-width of the overlay panel. If a number is provided, pixel units are assumed.
+  //  */
+  // maxWidth?: number | string;
+
+  // /**
+  //  * The max-height of the overlay panel. If a number is provided, pixel units are assumed.
+  //  */
+  // maxHeight?: number | string;
+
+  /**
    * Custom class for the overlay pane.
    *
    * Default: ng-overlay-container
@@ -101,6 +122,13 @@ export interface NgOverlayContainerConfiguration {
    * Default: true
    */
   isResizable?: boolean;
+
+  /**
+   * Wether the overlay should close when clicking outside.
+   *
+   * Default: false
+   */
+  disableBackdropClose?: boolean;
 }
 
 /**
@@ -120,5 +148,6 @@ export const DEFAULT_OVERLAY_CONFIGURATION: NgOverlayContainerConfiguration = {
   offsetX: 0,
   offsetY: 10,
   isDraggable: false,
-  isResizable: true
+  isResizable: true,
+  disableBackdropClose: false
 };
