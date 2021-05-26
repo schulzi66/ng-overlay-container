@@ -42,7 +42,7 @@ describe('NgOverlayContainerService', () => {
 
     const popoverRef = service.open(params);
 
-    const actualConfig = popoverRef.overlayRef.getConfig();
+    const actualConfig = popoverRef.overlay.getConfig();
 
     expect(spy).toHaveBeenCalled();
     expect(popoverRef.content).toBe('Blubb');
@@ -74,15 +74,15 @@ describe('NgOverlayContainerService', () => {
 
     const popoverRef = service.open(params);
 
-    const actualConfig = popoverRef.overlayRef.getConfig();
+    const actualConfig = popoverRef.overlay.getConfig();
 
     expect(spy).toHaveBeenCalled();
     expect(actualConfig.hasBackdrop).toBeFalsy();
     expect(actualConfig.width).toBe('100px');
     expect(actualConfig.height).toBe('200px');
     expect(actualConfig.backdropClass).toBe('cdk-overlay-dark-backdrop');
-    expect(((popoverRef.overlayRef as any)._pane.classList as DOMTokenList).contains('ng-overlay-container')).toBe(true);
-    expect(((popoverRef.overlayRef as any)._pane.classList as DOMTokenList).contains('custom-class')).toBe(true);
+    expect(((popoverRef.overlay as any)._pane.classList as DOMTokenList).contains('ng-overlay-container')).toBe(true);
+    expect(((popoverRef.overlay as any)._pane.classList as DOMTokenList).contains('custom-class')).toBe(true);
     expect(actualConfig.positionStrategy instanceof GlobalPositionStrategy).toBe(true);
   });
 });

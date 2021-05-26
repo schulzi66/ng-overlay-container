@@ -19,17 +19,17 @@ export class NgPopoverRef<T = any, R = any> {
   public afterClosed$ = this.afterClosed.asObservable();
 
   constructor(
-    public overlay: Overlay,
-    public overlayRef: OverlayRef,
+    private _overlay: Overlay,
+    public overlay: OverlayRef,
     public content: NgOverlayContainerContent,
     public data: T,
     public isDraggable?: boolean,
     public disableBackdropClose?: boolean
   ) {
-    this.initialOverlayConfig = overlayRef.getConfig();
+    this.initialOverlayConfig = overlay.getConfig();
     this.toggled = false;
     if (!disableBackdropClose) {
-      overlayRef.backdropClick().subscribe(() => this._close('backdropClick', null));
+      overlay.backdropClick().subscribe(() => this._close('backdropClick', null));
     }
   }
 
@@ -39,8 +39,8 @@ export class NgPopoverRef<T = any, R = any> {
    * @param height The new height
    */
   public resize(width?: string, height?: string): void {
-    const currentConfig = this.overlayRef.getConfig();
-    this.overlayRef.updateSize({ width: width ?? currentConfig.width, height: height ?? currentConfig.height });
+    const currentConfig = this.overlay.getConfig();
+    this.overlay.updateSize({ width: width ?? currentConfig.width, height: height ?? currentConfig.height });
   }
 
   /**
@@ -48,8 +48,8 @@ export class NgPopoverRef<T = any, R = any> {
    */
   public toggleMaximize(): void {
     if (!this.toggled) {
-      this.overlayRef.updatePositionStrategy(
-        this.overlay
+      this.overlay.updatePositionStrategy(
+        this._overlay
           .position()
           .flexibleConnectedTo({} as HTMLElement)
           .withPositions([
@@ -63,13 +63,13 @@ export class NgPopoverRef<T = any, R = any> {
             }
           ])
       );
-      this.overlayRef.updateSize({ width: '100%', height: '100%' });
+      this.overlay.updateSize({ width: '100%', height: '100%' });
     } else {
-      this.overlayRef.updateSize({
+      this.overlay.updateSize({
         width: this.initialOverlayConfig.width,
         height: this.initialOverlayConfig.height
       });
-      this.overlayRef.updatePositionStrategy(this.initialOverlayConfig.positionStrategy);
+      this.overlay.updatePositionStrategy(this.initialOverlayConfig.positionStrategy);
     }
     this.toggled = !this.toggled;
   }
@@ -83,7 +83,7 @@ export class NgPopoverRef<T = any, R = any> {
   }
 
   private _close(type: NgPopoverCloseType, data: R): void {
-    this.overlayRef.dispose();
+    this.overlay.dispose();
     this.afterClosed.next({
       type,
       data
