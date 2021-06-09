@@ -6061,7 +6061,6 @@ minipass-fetch@^1.3.0, minipass-fetch@^1.3.2:
   resolved "https://registry.yarnpkg.com/minipass-fetch/-/minipass-fetch-1.3.3.tgz#34c7cea038c817a8658461bf35174551dce17a0a"
   integrity sha512-akCrLDWfbdAWkMLBxJEeWTdNsjML+dt5YgOI4gJ53vuO0vrmYQkUPxa6j6V65s9CcePIr2SSWqjT2EcrNseryQ==
   dependencies:
-    encoding "^0.1.12"
     minipass "^3.1.0"
     minipass-sized "^1.0.3"
     minizlib "^2.0.0"
@@ -6254,10 +6253,10 @@ next-tick@~1.0.0:
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
-ng-overlay-container@11.0.2:
-  version "11.0.2"
-  resolved "https://registry.yarnpkg.com/ng-overlay-container/-/ng-overlay-container-11.0.2.tgz#eae2dae5499d674358889ad88750f05ac044eed9"
-  integrity sha512-UwqAmh5WTgt8a9vm1em4Cz40KVYsA9mMyKQk2pcj+i1094ur6mgYHwWW510B/VpYcIul4MZBcCbsCmsrKeHjPA==
+ng-overlay-container@11.0.4:
+  version "11.0.4"
+  resolved "https://registry.yarnpkg.com/ng-overlay-container/-/ng-overlay-container-11.0.4.tgz#24e34f4bad2e5baa5a108f9fe2a0f01996014d3a"
+  integrity sha512-SKoIPKFhQoZGbLGfZGGiNlLoKGF8yP3y2w7zYJZglSnSJxd62T9lsvRqi/tJ3G6hTDSS9WR4ijYlcGEztspcJg==
   dependencies:
     tslib "^2.0.0"
 
@@ -9086,9 +9085,9 @@ tree-kill@1.2.2:
   integrity sha512-L0Orpi8qGpRG//Nd+H90vFB+3iHnue1zSSGmNOOCh1GLJ7rUKVwV2HvijphGQS2UmhUZewS9VgvxYIdgr+fG1A==
 
 trim-newlines@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/trim-newlines/-/trim-newlines-3.0.0.tgz#79726304a6a898aa8373427298d54c2ee8b1cb30"
-  integrity sha512-C4+gOpvmxaSMKuEf9Qc134F1ZuOHVXKRbtEflf4NTtuuJDEIJ9p5PXsalL8SkeRw+qit1Mo+yuvMPAKwWg/1hA==
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/trim-newlines/-/trim-newlines-3.0.1.tgz#260a5d962d8b752425b32f3a7db0dcacd176c144"
+  integrity sha512-c1PTsA3tYrIsLGkJkzHF+w9F2EyxfXGo4UyJc4pFL++FMjnq0HJS69T3M7d//gKrFKwy429bouPescbjecU+Zw==
 
 ts-node@~8.3.0:
   version "8.3.0"
