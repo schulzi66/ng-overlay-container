@@ -6061,7 +6061,6 @@ minipass-fetch@^1.3.0, minipass-fetch@^1.3.2:
   resolved "https://registry.yarnpkg.com/minipass-fetch/-/minipass-fetch-1.3.3.tgz#34c7cea038c817a8658461bf35174551dce17a0a"
   integrity sha512-akCrLDWfbdAWkMLBxJEeWTdNsjML+dt5YgOI4gJ53vuO0vrmYQkUPxa6j6V65s9CcePIr2SSWqjT2EcrNseryQ==
   dependencies:
-    encoding "^0.1.12"
     minipass "^3.1.0"
     minipass-sized "^1.0.3"
     minizlib "^2.0.0"
@@ -6254,10 +6253,10 @@ next-tick@~1.0.0:
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
-ng-overlay-container@11.0.2:
-  version "11.0.2"
-  resolved "https://registry.yarnpkg.com/ng-overlay-container/-/ng-overlay-container-11.0.2.tgz#eae2dae5499d674358889ad88750f05ac044eed9"
-  integrity sha512-UwqAmh5WTgt8a9vm1em4Cz40KVYsA9mMyKQk2pcj+i1094ur6mgYHwWW510B/VpYcIul4MZBcCbsCmsrKeHjPA==
+ng-overlay-container@11.0.4:
+  version "11.0.4"
+  resolved "https://registry.yarnpkg.com/ng-overlay-container/-/ng-overlay-container-11.0.4.tgz#24e34f4bad2e5baa5a108f9fe2a0f01996014d3a"
+  integrity sha512-SKoIPKFhQoZGbLGfZGGiNlLoKGF8yP3y2w7zYJZglSnSJxd62T9lsvRqi/tJ3G6hTDSS9WR4ijYlcGEztspcJg==
   dependencies:
     tslib "^2.0.0"
 
@@ -6941,9 +6940,9 @@ path-key@^2.0.0, path-key@^2.0.1:
   integrity sha1-QRyttXTFoUDTpLGRDUDYDMn0C0A=
 
 path-parse@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.6.tgz#d62dbb5679405d72c4737ec58600e9ddcf06d24c"
-  integrity sha512-GSmOT2EbHrINBf9SR7CDELwlJ8AENk3Qn7OikK4nFYAu3Ote2+JYNVvkpAEQm3/TLNEJFD/xZJjzyxg3KBWOzw==
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.7.tgz#fbc114b60ca42b30d9daf5858e4bd68bbedb6735"
+  integrity sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw==
 
 path-to-regexp@0.1.7:
   version "0.1.7"
