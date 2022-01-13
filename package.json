@@ -21,7 +21,7 @@
     "@angular/common": "12.2.15",
     "@angular/core": "12.2.15",
     "@angular/material": "11.2.9",
-    "ng-overlay-container": "11.0.4"
+    "ng-overlay-container": "12.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~12.2.15",
