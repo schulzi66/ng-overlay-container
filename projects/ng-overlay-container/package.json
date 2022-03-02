@@ -21,7 +21,6 @@
     "popup",
     "popover"
   ],
-  "main": "./bundles/ng-overlay-container.umd.js",
   "license": "MIT",
   "dependencies": {
     "tslib": "^2.0.0"
