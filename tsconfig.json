@@ -16,10 +16,7 @@
       "dom"
     ],
     "paths": {
-      "ng-overlay-container": [
-        "dist/ng-overlay-container/ng-overlay-container",
-        "dist/ng-overlay-container"
-      ]
+      "ng-overlay-container": ["./projects/ng-overlay-container/src/public-api.ts"]
     }
   },
   "angularCompilerOptions": {
