@@ -3,6 +3,10 @@
   "version": "13.0.0",
   "description": "Making the creation of overlays a piece of 🍰",
   "author": "Marius Schulze",
+  "contributors": [
+    "Marius Schulze",
+    "Derek Burgman <derek@dereekb.com>"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/schulzi66/ng-overlay-container.git"
@@ -26,9 +30,9 @@
     "tslib": "^2.0.0"
   },
   "peerDependencies": {
-    "@angular/cdk": "^13.2.4",
-    "@angular/common": "^13.2.4",
-    "@angular/core": "^13.2.4",
-    "@angular/material": "^13.2.4"
+    "@angular/cdk": "^13.0.0",
+    "@angular/common": "^13.0.0",
+    "@angular/core": "^13.0.0",
+    "@angular/material": "^13.0.0"
   }
 }
