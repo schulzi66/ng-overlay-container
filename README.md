@@ -355,6 +355,7 @@ To do so, follow these steps:
 4. Make your changes/fix
     - Write unit tests for any code change
     - Update the README.md accordingly
+    - Increase the version number in `projects/ng-overlay-container/package.json`
 5. Run <code>npm run test</code> to execute all unit tests locally
 6. Submit a pull request to bring your changes to this repository
     - Provide a description for your changes

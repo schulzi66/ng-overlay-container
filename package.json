@@ -9,7 +9,7 @@
     "test": "ng test ng-overlay-container",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-lib:prod": "yarn run copy-readme && ng build ng-overlay-container --configuration production",
+    "build-lib:prod": "ng build ng-overlay-container --configuration production",
     "copy-readme": "cpy README.md projects/ng-overlay-container && cpy README.md src/assets",
     "npm-publish": "npm publish ./dist/ng-overlay-container",
     "deploy:pipeline": "yarn run build-lib:prod && yarn publish ./dist/ng-overlay-container",
