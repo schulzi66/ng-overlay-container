@@ -10,6 +10,7 @@ Making the creation of overlays a piece of 🍰
 ### Versions
 
     The major versions reflect the used Angular version
+    13.x.x => Angular 13
     12.x.x => Angular 12
     11.x.x => Angular 11
     10.x.x => Angular 10
@@ -20,10 +21,10 @@ Making the creation of overlays a piece of 🍰
 Install the PeerDependencies:
 ```json
 "peerDependencies": {
-    "@angular/cdk": "12.2.13",
-    "@angular/common": "12.2.15",
-    "@angular/core": "12.2.15",
-    "@angular/material": "12.2.13"
+    "@angular/cdk": "^13.0.0",
+    "@angular/common": "^13.0.0",
+    "@angular/core": "^13.0.0",
+    "@angular/material": "^13.0.0"
 }
 ```
 
