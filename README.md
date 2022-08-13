@@ -10,24 +10,26 @@
 **ng-overlay-container** makes creating floating overlays for an angular application a breeze. It abstracts the angular cdk and provides a highly customizable interface for you to plug-n-use.
 
 ## Table of content
-- [Supported Versions](#versions)
+- [Table of content](#table-of-content)
+- [Supported Versions](#supported-versions)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
-    - [Global](#global)
-    - [Flexible](#flexible)
+  - [Global](#global)
+  - [Flexible](#flexible)
 - [API](#api)
-    - [Open Method Definition](#open-method-definition)
-    - [NgOverlayContainerParameters](#ngoverlaycontainerparameters)
-    - [NgOverlayContainerContent](#ngoverlaycontainercontent)
-    - [NgOverlayContainerConfiguration](#ngoverlaycontainerconfiguration)
-        - [Default NgOverlayContainerConfiguration](#default-ngoverlaycontainerconfiguration)
-        - [Order Of Fallback Positions](#order-of-fallback-positions)
+  - [Open Method Definition](#open-method-definition)
+  - [NgOverlayContainerParameters](#ngoverlaycontainerparameters)
+  - [NgOverlayContainerContent](#ngoverlaycontainercontent)
+  - [NgOverlayContainerConfiguration](#ngoverlaycontainerconfiguration)
+    - [Default NgOverlayContainerConfiguration](#default-ngoverlaycontainerconfiguration)
+    - [Order Of Fallback Positions](#order-of-fallback-positions)
 - [Contribute](#contribute)
     
 
 ## Supported Versions
 
     The major versions reflect the used Angular version
+    14.x.x => Angular 14
     13.x.x => Angular 13
     12.x.x => Angular 12
     11.x.x => Angular 11

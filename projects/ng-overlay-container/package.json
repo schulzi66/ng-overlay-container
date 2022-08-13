@@ -1,6 +1,6 @@
 {
   "name": "ng-overlay-container",
-  "version": "13.0.2",
+  "version": "14.0.0",
   "description": "Making the creation of overlays a piece of 🍰",
   "author": "Marius Schulze",
   "contributors": [
@@ -30,9 +30,9 @@
     "tslib": "^2.0.0"
   },
   "peerDependencies": {
-    "@angular/cdk": "^13.0.0",
-    "@angular/common": "^13.0.0",
-    "@angular/core": "^13.0.0",
-    "@angular/material": "^13.0.0"
+    "@angular/cdk": "^14.0.0",
+    "@angular/common": "^14.0.0",
+    "@angular/core": "^14.0.0",
+    "@angular/material": "^14.0.0"
   }
 }
