@@ -10,14 +10,17 @@
     "module": "es2020",
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2015",
+    "target": "ES2022",
     "lib": [
       "es2018",
       "dom"
     ],
     "paths": {
-      "ng-overlay-container": ["./projects/ng-overlay-container/src/public-api.ts"]
-    }
+      "ng-overlay-container": [
+        "./projects/ng-overlay-container/src/public-api.ts"
+      ]
+    },
+    "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,
