@@ -29,6 +29,7 @@
 ## Supported Versions
 
     The major versions reflect the used Angular version
+    15.x.x => Angular 15
     14.x.x => Angular 14
     13.x.x => Angular 13
     12.x.x => Angular 12
@@ -47,10 +48,10 @@ Validate the PeerDependencies:
 
 ```json
 "peerDependencies": {
-    "@angular/cdk": "^14.0.0",
-    "@angular/common": "^14.0.0",
-    "@angular/core": "^14.0.0",
-    "@angular/material": "^14.0.0"
+    "@angular/cdk": "^15.0.0",
+    "@angular/common": "^15.0.0",
+    "@angular/core": "^15.0.0",
+    "@angular/material": "^15.0.0"
 }
 ```
 
