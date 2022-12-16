@@ -35,7 +35,7 @@ const routes: Routes = [
     BrowserAnimationsModule,
     CommonModule,
     FormsModule,
-    RouterModule.forRoot(routes, { useHash: true, relativeLinkResolution: 'legacy' }),
+    RouterModule.forRoot(routes, { useHash: true }),
     MarkdownModule.forRoot({
       loader: HttpClient
     }),
