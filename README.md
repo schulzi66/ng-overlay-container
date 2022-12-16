@@ -47,10 +47,10 @@ Validate the PeerDependencies:
 
 ```json
 "peerDependencies": {
-    "@angular/cdk": "^13.0.0",
-    "@angular/common": "^13.0.0",
-    "@angular/core": "^13.0.0",
-    "@angular/material": "^13.0.0"
+    "@angular/cdk": "^14.0.0",
+    "@angular/common": "^14.0.0",
+    "@angular/core": "^14.0.0",
+    "@angular/material": "^14.0.0"
 }
 ```
 
@@ -353,7 +353,7 @@ To do so, follow these steps:
 1. Fork the repository as described on the [official Github Docs](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
 2. Open the <code>ng-overlay-container.code-workspace</code>
 2. Run <code>npm install</code>
-3. Run <code>npm run test</code> to run the demo application
+3. Run <code>npm run start</code> to run the demo application
 4. Make your changes/fix
     - Write unit tests for any code change
     - Update the README.md accordingly
