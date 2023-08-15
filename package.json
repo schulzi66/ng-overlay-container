@@ -12,8 +12,7 @@
     "build-lib:prod": "ng build ng-overlay-container --configuration production",
     "copy-readme": "cpy README.md projects/ng-overlay-container && cpy README.md src/assets",
     "npm-publish": "npm publish ./dist/ng-overlay-container",
-    "deploy:pipeline": "yarn run build-lib:prod && yarn publish ./dist/ng-overlay-container",
-    "postinstall": "ngcc"
+    "deploy:pipeline": "yarn run build-lib:prod && yarn publish ./dist/ng-overlay-container"
   },
   "private": true,
   "dependencies": {
@@ -44,6 +43,7 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.7.0",
+    "marked": "^4.3.0",
     "ng-packagr": "^16.2.0",
     "ngx-markdown": "^16.0.0",
     "protractor": "~7.0.0",
