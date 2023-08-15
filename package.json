@@ -17,10 +17,10 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/cdk": "^15.0.3",
+    "@angular/cdk": "^16.2.0",
     "@angular/common": "^16.2.0",
     "@angular/core": "^16.2.0",
-    "@angular/material": "^15.0.3"
+    "@angular/material": "^16.2.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "16.2.0",
