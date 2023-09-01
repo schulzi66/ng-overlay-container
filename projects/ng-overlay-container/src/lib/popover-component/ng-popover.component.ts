@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef, ViewEncapsulation } from '@angular/core';
+import { Component, HostListener, OnInit, TemplateRef, ViewEncapsulation } from '@angular/core';
 import { NgOverlayContainerContent } from '../models/ng-overlay-container-content.type';
 import { NgPopoverRenderMethod } from '../models/ng-popover-render-method.type';
 import { NgPopoverRef } from './ng-popover-reference';
@@ -16,6 +16,13 @@ export class NgPopoverComponent implements OnInit {
     public content: NgOverlayContainerContent;
     public context: { data: any; close: any };
     public isDraggable?: boolean;
+
+    @HostListener('document:keydown', ['$event'])
+    private handleKeydown(event: KeyboardEvent) {
+        if (event.key === 'Escape') {
+          this.ngPopoverRef.close();
+        }
+      }
 
     public constructor(private ngPopoverRef: NgPopoverRef) {}
 

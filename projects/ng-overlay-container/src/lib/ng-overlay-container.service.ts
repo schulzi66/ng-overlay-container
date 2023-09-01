@@ -74,8 +74,6 @@ export class NgOverlayContainerService {
     return Object.assign(config, {
       ...(configuration.minWidth && { minWidth: configuration.minWidth }),
       ...(configuration.minHeight && { minHeight: configuration.minHeight })
-      // ...(configuration.maxWidth && { maxWidth: configuration.maxWidth }),
-      // ...(configuration.maxHeight && { maxHeight: configuration.maxHeight })
     });
   }
 
