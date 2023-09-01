@@ -30,12 +30,6 @@ export class DemoComponent {
   public selectedMinHeight = undefined;
   public minHeights = ['300px', '400px', '500px', '90vw', '100vw', '100%'];
 
-  // public selectedMaxWidth = undefined;
-  // public maxWidths = ['300px', '400px', '500px', '90vw', '100vw', '100%'];
-
-  // public selectedMaxHeight = undefined;
-  // public maxHeights = ['300px', '400px', '500px', '90vw', '100vw', '100%'];
-
   public selectedOriginX: HorizontalConnectionPos = 'center';
   public originXs = ['start', 'center', 'end'];
 
@@ -93,8 +87,6 @@ export class DemoComponent {
       height: this.selectedHeight,
       minWidth: this.selectedMinWidth,
       minHeight: this.selectedMinHeight,
-      // maxWidth: this.selectedMaxWidth,
-      // maxHeight: this.selectedMaxHeight,
       originX: this.selectedOriginX,
       originY: this.selectedOriginY,
       overlayX: this.selectedOverlayX,

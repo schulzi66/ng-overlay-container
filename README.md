@@ -24,7 +24,7 @@
     - [Default NgOverlayContainerConfiguration](#default-ngoverlaycontainerconfiguration)
     - [Order Of Fallback Positions](#order-of-fallback-positions)
 - [Contribute](#contribute)
-    
+
 
 ## Supported Versions
 
@@ -62,6 +62,12 @@ Add a material theme e.g. a prebuild one (if not done already):
 "styles": [
    "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
 ]
+```
+
+If you are not using Angular Material but the Angular CDK on its own, you have to include a small set of structural styles in your global stylessheet to use the overlay correctly:
+
+```css
+@import '@angular/cdk/overlay-prebuilt.css';
 ```
 
 Import the `NgOverlayContainerModule` in your `app.module`:
