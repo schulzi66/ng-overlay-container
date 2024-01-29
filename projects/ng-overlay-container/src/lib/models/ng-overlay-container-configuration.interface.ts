@@ -6,15 +6,11 @@ import { HorizontalConnectionPos, VerticalConnectionPos } from '@angular/cdk/ove
 export interface NgOverlayContainerConfiguration {
   /**
    * Width of the overlay.
-   *
-   * Default: 400px
    */
   width?: string;
 
   /**
    * Height of the overlay.
-   *
-   * Default: 500px
    */
   height?: string;
 
@@ -128,8 +124,6 @@ export const DEFAULT_OVERLAY_CONFIGURATION: NgOverlayContainerConfiguration = {
   backdropClass: 'cdk-overlay-transparent-backdrop',
   panelClass: 'ng-overlay-container',
   useGlobalPositionStrategy: false,
-  width: '400px',
-  height: '500px',
   originX: 'center',
   originY: 'bottom',
   overlayX: 'center',

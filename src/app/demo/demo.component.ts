@@ -19,10 +19,10 @@ export class DemoComponent {
   public overlayConfiguration: NgOverlayContainerConfiguration;
 
   public selectedWidth = '400px';
-  public widths = ['300px', '400px', '500px', '90vw', '100vw', '100%'];
+  public widths = ['undefined', '300px', '400px', '500px', '90vw', '100vw', '100%'];
 
   public selectedHeight = '300px';
-  public heights = ['300px', '400px', '500px', '90vh', '100vh', '100%'];
+  public heights = ['undefined', '300px', '400px', '500px', '90vh', '100vh', '100%'];
 
   public selectedMinWidth = undefined;
   public minWidths = ['300px', '400px', '500px', '90vw', '100vw', '100%'];
