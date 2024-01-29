@@ -12,6 +12,7 @@
 ## Table of content
 - [Table of content](#table-of-content)
 - [Supported Versions](#supported-versions)
+- [Breaking Changes](#breaking-changes)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
   - [Global](#global)
@@ -37,6 +38,9 @@
     11.x.x => Angular 11
     10.x.x => Angular 10
     0.0.x => Angular 9
+
+## Breaking Changes
+- From `v16.0.2` on there will be no default width and heigth. The size adapts dynamically to the content.
 
 ## Getting Started
 
@@ -301,8 +305,6 @@ export const DEFAULT_OVERLAY_CONFIGURATION: NgOverlayContainerConfiguration = {
   backdropClass: "cdk-overlay-transparent-backdrop",
   panelClass: "ng-overlay-container",
   useGlobalPositionStrategy: false,
-  width: "400px",
-  height: "500px",
   originX: "center",
   originY: "bottom",
   overlayX: "center",
@@ -351,6 +353,8 @@ The order of fallback positions, if the overlay can't be displayed onscreen.
   overlayY: 'bottom'
 }
 ```
+
+
 
 ## Contribute
 First of, thank you for considering to contribute! 🎉👍
