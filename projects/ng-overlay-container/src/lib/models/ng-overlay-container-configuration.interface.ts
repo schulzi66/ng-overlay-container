@@ -1,4 +1,4 @@
-import { HorizontalConnectionPos, VerticalConnectionPos } from '@angular/cdk/overlay';
+import { ConnectionPositionPair, HorizontalConnectionPos, VerticalConnectionPos } from '@angular/cdk/overlay';
 
 /**
  * Configuration for the overlay container
@@ -114,6 +114,13 @@ export interface NgOverlayContainerConfiguration {
    * Default: false
    */
   disableBackdropClose?: boolean;
+
+  /**
+   * Custom fallback positions for `useGlobalPositionStrategy: false` if provied position is not possible to display.
+   *
+   * Default: []
+   */
+  fallbackPositions?: ConnectionPositionPair[]
 }
 
 /**
@@ -132,5 +139,6 @@ export const DEFAULT_OVERLAY_CONFIGURATION: NgOverlayContainerConfiguration = {
   offsetY: 10,
   isDraggable: false,
   isResizable: true,
-  disableBackdropClose: false
+  disableBackdropClose: false,
+  fallbackPositions: []
 };
