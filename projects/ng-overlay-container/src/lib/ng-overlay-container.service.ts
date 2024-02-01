@@ -6,6 +6,7 @@ import {
     NgOverlayContainerConfiguration
 } from './models/ng-overlay-container-configuration.interface';
 import { NgOverlayContainerParameters } from './models/ng-overlay-container-parameters.interface';
+import { BOTTOM_POSITION, LEFT_POSITION, RIGHT_POSITION, TOP_POSITION } from './models/ng-overlay-container-positions';
 import { NgPopoverRef } from './popover-component/ng-popover-reference';
 import { NgPopoverComponent } from './popover-component/ng-popover.component';
 
@@ -102,35 +103,14 @@ export class NgOverlayContainerService {
         overlayY: configuration.overlayY,
         offsetX: configuration.offsetX,
         offsetY: configuration.offsetY
-      }, // Fallback positions if provided position is not possible
-      {
-        // Bottom
-        originX: 'center',
-        originY: 'bottom',
-        overlayX: 'center',
-        overlayY: 'top'
       },
-      {
-        // Right
-        originX: 'end',
-        originY: 'center',
-        overlayX: 'start',
-        overlayY: 'center'
-      },
-      {
-        // Left
-        originX: 'start',
-        originY: 'center',
-        overlayX: 'end',
-        overlayY: 'center'
-      },
-      {
-        // Top
-        originX: 'center',
-        originY: 'top',
-        overlayX: 'center',
-        overlayY: 'bottom'
-      }
+      // Custom fallback positions if provided
+      ...configuration.fallbackPositions,
+      // Default fallback positions if provided position is not possible
+      BOTTOM_POSITION,
+      RIGHT_POSITION,
+      LEFT_POSITION,
+      TOP_POSITION
     ];
   }
 

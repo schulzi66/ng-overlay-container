@@ -5,6 +5,7 @@
 export * from './lib/models/ng-overlay-container-configuration.interface';
 export * from './lib/models/ng-overlay-container-content.type';
 export * from './lib/models/ng-overlay-container-parameters.interface';
+export * from './lib/models/ng-overlay-container-positions';
 export * from './lib/models/ng-popover-close-event.interface';
 export * from './lib/models/ng-popover-render-method.type';
 export * from './lib/ng-overlay-container.module';

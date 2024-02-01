@@ -287,6 +287,7 @@ export interface NgOverlayContainerConfiguration {
   isDraggable?: boolean;
   isResizable?: boolean;
   disableBackdropClose?: boolean;
+  fallbackPositions?: ConnectionPositionPair[]
 }
 ```
 
@@ -314,6 +315,7 @@ export const DEFAULT_OVERLAY_CONFIGURATION: NgOverlayContainerConfiguration = {
   isDraggable: false,
   isResizable: true,
   disableBackdropClose: false,
+  fallbackPositions: []
 };
 ```
 
@@ -322,6 +324,8 @@ export const DEFAULT_OVERLAY_CONFIGURATION: NgOverlayContainerConfiguration = {
 #### Order Of Fallback Positions
 
 The order of fallback positions, if the overlay can't be displayed onscreen.
+
+Custom fallback positions will have priority over the default positions.
 
 ```typescript
 {
