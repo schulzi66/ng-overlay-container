@@ -82,18 +82,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-overlay-container-demo:build"
+            "buildTarget": "ng-overlay-container-demo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ng-overlay-container-demo:build:production"
+              "buildTarget": "ng-overlay-container-demo:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-overlay-container-demo:build"
+            "buildTarget": "ng-overlay-container-demo:build"
           }
         },
         "test": {
