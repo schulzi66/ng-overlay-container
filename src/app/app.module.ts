@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -28,26 +28,20 @@ const routes: Routes = [
   { path: 'docs', component: DocumentationComponent }
 ];
 
-@NgModule({
-  declarations: [AppComponent, DemoOverlayComponent, DocumentationComponent, DemoComponent],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    CommonModule,
-    FormsModule,
-    RouterModule.forRoot(routes, { useHash: true }),
-    MarkdownModule.forRoot({
-      loader: HttpClient
-    }),
-    MatIconModule,
-    MatInputModule,
-    MatSidenavModule,
-    MatRadioModule,
-    MatButtonModule,
-    MatSelectModule,
-    HttpClientModule,    
-    NgOverlayContainerModule
-  ],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [AppComponent, DemoOverlayComponent, DocumentationComponent, DemoComponent],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        BrowserAnimationsModule,
+        CommonModule,
+        FormsModule,
+        RouterModule.forRoot(routes, { useHash: true }),
+        MarkdownModule.forRoot({
+            loader: HttpClient
+        }),
+        MatIconModule,
+        MatInputModule,
+        MatSidenavModule,
+        MatRadioModule,
+        MatButtonModule,
+        MatSelectModule,
+        NgOverlayContainerModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule {}
