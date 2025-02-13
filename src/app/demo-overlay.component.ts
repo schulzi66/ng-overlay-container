@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NgPopoverRef } from 'ng-overlay-container';
 @Component({
-  selector: 'demo-overlay',
-  template: `
+    selector: 'demo-overlay',
+    template: `
     <button style="float: right;" mat-icon-button color="primary" (click)="maximize()">
       <mat-icon>{{ resizeIcon }}</mat-icon>
     </button>
@@ -23,7 +23,8 @@ import { NgPopoverRef } from 'ng-overlay-container';
 
       <button style="margin: 10px;" mat-stroked-button color="primary" (click)="close()">Pass data back</button>
     </div>
-  `
+  `,
+    standalone: false
 })
 export class DemoOverlayComponent {
   private isExpanded: boolean;

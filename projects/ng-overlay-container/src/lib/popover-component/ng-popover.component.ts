@@ -9,7 +9,8 @@ import { NgPopoverRef } from './ng-popover-reference';
 @Component({
     templateUrl: './ng-popover.component.html',
     styleUrls: ['./ng-popover.component.scss'],
-    encapsulation: ViewEncapsulation.None
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class NgPopoverComponent implements OnInit {
     public ngRenderMethod: NgPopoverRenderMethod;
