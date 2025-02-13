@@ -192,7 +192,7 @@
     symbol-observable "4.0.0"
     yargs "17.7.2"
 
-"@angular/common@^17.0.0", "@angular/common@^18.0.0 || ^19.0.0", "@angular/common@^18.1.2", "@angular/common@18.1.2":
+"@angular/common@^18.0.0", "@angular/common@^18.0.0 || ^19.0.0", "@angular/common@^18.1.2", "@angular/common@18.1.2":
   version "18.1.2"
   resolved "https://registry.npmjs.org/@angular/common/-/common-18.1.2.tgz"
   integrity sha512-PXzRH5fCSmjGwNvopPfwAxcMqQPFLamyIjVJa5mwTyk5FLhKNrNecSo7m6ZpsfLPsW5Ipk/ups9RJD0Mep82Hw==
@@ -225,7 +225,7 @@
   resolved "https://registry.npmjs.org/@angular/compiler/-/compiler-9.0.0.tgz"
   integrity sha512-ctjwuntPfZZT2mNj2NDIVu51t9cvbhl/16epc5xEwyzyDt76pX9UgwvY+MbXrf/C/FWwdtmNtfP698BKI+9leQ==
 
-"@angular/core@^17.0.0", "@angular/core@^18.0.0 || ^19.0.0", "@angular/core@^18.1.2", "@angular/core@18.1.2":
+"@angular/core@^18.0.0", "@angular/core@^18.0.0 || ^19.0.0", "@angular/core@^18.1.2", "@angular/core@18.1.2":
   version "18.1.2"
   resolved "https://registry.npmjs.org/@angular/core/-/core-18.1.2.tgz"
   integrity sha512-/wiewpA8KpEkXf3E/Q0+0H3Dgg5zCG/+vzAUVIOGP+0tYk8no0NUecHyXLjz0hRQOJ6a3zMKVtZO3wYl8WNGEg==
@@ -258,7 +258,7 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/platform-browser@^17.0.0", "@angular/platform-browser@^18.0.0 || ^19.0.0", "@angular/platform-browser@18.1.2":
+"@angular/platform-browser@^18.0.0", "@angular/platform-browser@^18.0.0 || ^19.0.0", "@angular/platform-browser@18.1.2":
   version "18.1.2"
   resolved "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-18.1.2.tgz"
   integrity sha512-G/9dU6J+RyJ4qfWcxgVdUsVEF/2lQKCpC24spongOwn7yCTrORkopFEmuuwftZXaFoduxE2Q1i4GCiQkqcHRwQ==
@@ -3989,7 +3989,7 @@ emoji-regex@^9.2.2:
   resolved "https://registry.npmjs.org/emoji-regex/-/emoji-regex-9.2.2.tgz"
   integrity sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==
 
-emoji-toolkit@^8.0.0:
+"emoji-toolkit@>= 8.0.0 < 10.0.0":
   version "8.0.0"
   resolved "https://registry.npmjs.org/emoji-toolkit/-/emoji-toolkit-8.0.0.tgz"
   integrity sha512-Vz8YIqQJsQ+QZ4yuKMMzliXceayqfWbNjb6bST+vm77QAhU2is3I+/PRxrNknW+q1bvHHMgjLCQXxzINWLVapg==
@@ -6149,7 +6149,7 @@ merge2@^1.2.3, merge2@^1.3.0:
   resolved "https://registry.npmjs.org/merge2/-/merge2-1.4.1.tgz"
   integrity sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==
 
-mermaid@^10.6.0:
+"mermaid@>= 10.6.0 < 12.0.0":
   version "10.9.1"
   resolved "https://registry.npmjs.org/mermaid/-/mermaid-10.9.1.tgz"
   integrity sha512-Mx45Obds5W1UkW1nv/7dHRsbfMM1aOKA2+Pxs/IGHNonygDHwmng8xTHyS9z4KWVi0rbko8gjiBmuwwXQ7tiNA==
@@ -6710,17 +6710,17 @@ ng-packagr@^18.0.0, ng-packagr@^18.1.0:
   optionalDependencies:
     rollup "^4.18.0"
 
-ngx-markdown@^17.2.1:
-  version "17.2.1"
-  resolved "https://registry.npmjs.org/ngx-markdown/-/ngx-markdown-17.2.1.tgz"
-  integrity sha512-TKzxP2R2uTGpVFx0OZDFC/BpNJYUabG2z59/9/PXrTP3R7xTNFuvGQZSNitAQFD7nI3Uko87Ra3GJrbaHdjeBA==
+ngx-markdown@^18.1.0:
+  version "18.1.0"
+  resolved "https://registry.npmjs.org/ngx-markdown/-/ngx-markdown-18.1.0.tgz"
+  integrity sha512-n4HFSm5oqVMXFuD+WXIVkI6NyxD8Oubr4B3c9U1J7Ptr6t9DVnkNBax3yxWc+8Wli+FXTuGEnDXzB3sp7E9paA==
   dependencies:
     tslib "^2.3.0"
   optionalDependencies:
     clipboard "^2.0.11"
-    emoji-toolkit "^8.0.0"
+    emoji-toolkit ">= 8.0.0 < 10.0.0"
     katex "^0.16.0"
-    mermaid "^10.6.0"
+    mermaid ">= 10.6.0 < 12.0.0"
     prismjs "^1.28.0"
 
 nice-napi@^1.0.2:
