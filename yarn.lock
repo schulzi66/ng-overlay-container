@@ -192,7 +192,7 @@
     symbol-observable "4.0.0"
     yargs "17.7.2"
 
-"@angular/common@^18.0.0", "@angular/common@^18.0.0 || ^19.0.0", "@angular/common@^18.1.2", "@angular/common@18.1.2":
+"@angular/common@^18.0.0 || ^19.0.0", "@angular/common@^18.1.2", "@angular/common@^19.0.0", "@angular/common@18.1.2":
   version "18.1.2"
   resolved "https://registry.npmjs.org/@angular/common/-/common-18.1.2.tgz"
   integrity sha512-PXzRH5fCSmjGwNvopPfwAxcMqQPFLamyIjVJa5mwTyk5FLhKNrNecSo7m6ZpsfLPsW5Ipk/ups9RJD0Mep82Hw==
@@ -225,7 +225,7 @@
   resolved "https://registry.npmjs.org/@angular/compiler/-/compiler-9.0.0.tgz"
   integrity sha512-ctjwuntPfZZT2mNj2NDIVu51t9cvbhl/16epc5xEwyzyDt76pX9UgwvY+MbXrf/C/FWwdtmNtfP698BKI+9leQ==
 
-"@angular/core@^18.0.0", "@angular/core@^18.0.0 || ^19.0.0", "@angular/core@^18.1.2", "@angular/core@18.1.2":
+"@angular/core@^18.0.0 || ^19.0.0", "@angular/core@^18.1.2", "@angular/core@^19.0.0", "@angular/core@18.1.2":
   version "18.1.2"
   resolved "https://registry.npmjs.org/@angular/core/-/core-18.1.2.tgz"
   integrity sha512-/wiewpA8KpEkXf3E/Q0+0H3Dgg5zCG/+vzAUVIOGP+0tYk8no0NUecHyXLjz0hRQOJ6a3zMKVtZO3wYl8WNGEg==
@@ -258,7 +258,7 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/platform-browser@^18.0.0", "@angular/platform-browser@^18.0.0 || ^19.0.0", "@angular/platform-browser@18.1.2":
+"@angular/platform-browser@^18.0.0 || ^19.0.0", "@angular/platform-browser@^19.0.0", "@angular/platform-browser@18.1.2":
   version "18.1.2"
   resolved "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-18.1.2.tgz"
   integrity sha512-G/9dU6J+RyJ4qfWcxgVdUsVEF/2lQKCpC24spongOwn7yCTrORkopFEmuuwftZXaFoduxE2Q1i4GCiQkqcHRwQ==
@@ -6072,7 +6072,7 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-marked@^9.1.6, "marked@>= 9.0.0 < 13.0.0":
+marked@^15.0.0, marked@^9.1.6:
   version "9.1.6"
   resolved "https://registry.npmjs.org/marked/-/marked-9.1.6.tgz"
   integrity sha512-jcByLnIFkd5gSXZmjNvS1TlmRhCXZjIzHYlaGkPlLIekG55JDR2Z4va9tZwCiP+/RDERiNhMOFu01xd6O5ct1Q==
@@ -6710,10 +6710,10 @@ ng-packagr@^18.0.0, ng-packagr@^18.1.0:
   optionalDependencies:
     rollup "^4.18.0"
 
-ngx-markdown@^18.1.0:
-  version "18.1.0"
-  resolved "https://registry.npmjs.org/ngx-markdown/-/ngx-markdown-18.1.0.tgz"
-  integrity sha512-n4HFSm5oqVMXFuD+WXIVkI6NyxD8Oubr4B3c9U1J7Ptr6t9DVnkNBax3yxWc+8Wli+FXTuGEnDXzB3sp7E9paA==
+ngx-markdown@^19.1.0:
+  version "19.1.0"
+  resolved "https://registry.npmjs.org/ngx-markdown/-/ngx-markdown-19.1.0.tgz"
+  integrity sha512-Zl9M6DzM1DOX54Nj8+okx9v6GVsQVE/D7jtkjlYYWLqMaW78ZThwQ9XlCbn3OpK0UOOpJnminRRlZERAeWXcCA==
   dependencies:
     tslib "^2.3.0"
   optionalDependencies:
@@ -9506,7 +9506,7 @@ zone.js@~0.10.2, zone.js@~0.10.3:
   resolved "https://registry.npmjs.org/zone.js/-/zone.js-0.10.3.tgz"
   integrity sha512-LXVLVEq0NNOqK/fLJo3d0kfzd4sxwn2/h67/02pjCjfKDxgx1i9QqpvtHD8CrBnSSwMw5+dy11O7FRX5mkO7Cg==
 
-zone.js@~0.14.0, zone.js@~0.14.8:
+zone.js@~0.14.0, zone.js@~0.14.8, zone.js@~0.15.0:
   version "0.14.8"
   resolved "https://registry.npmjs.org/zone.js/-/zone.js-0.14.8.tgz"
   integrity sha512-48uh7MnVp4/OQDuCHeFdXw5d8xwPqFTvlHgPJ1LBFb5GaustLSZV+YUH0to5ygNyGpqTsjpbpt141U/j3pCfqQ==
