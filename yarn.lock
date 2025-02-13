@@ -112,7 +112,7 @@
     ora "5.4.1"
     rxjs "7.8.1"
 
-"@angular/animations@^18.0.0 || ^19.0.0", "@angular/animations@19.1.6":
+"@angular/animations@^19.0.0 || ^20.0.0", "@angular/animations@19.1.6":
   version "19.1.6"
   resolved "https://registry.npmjs.org/@angular/animations/-/animations-19.1.6.tgz"
   integrity sha512-iacosz3fygp0AyT57+suVpLChl10xS5RBje09TfQIKHTUY0LWkMspgaK9gwtlflpIhjedPV0UmgRIKhhFcQM1A==
@@ -153,10 +153,10 @@
   optionalDependencies:
     lmdb "3.2.2"
 
-"@angular/cdk@^18.1.2", "@angular/cdk@18.1.2":
-  version "18.1.2"
-  resolved "https://registry.npmjs.org/@angular/cdk/-/cdk-18.1.2.tgz"
-  integrity sha512-yiAJ/9AMVF2zk7VLEuyJxNJwpV84xLlf0zCaXiYIs6Z8xU6m8N9KR2nqxC59gQc4nTjItmoO/Sgk7XH0X4yGOQ==
+"@angular/cdk@^19.1.4", "@angular/cdk@19.1.4":
+  version "19.1.4"
+  resolved "https://registry.npmjs.org/@angular/cdk/-/cdk-19.1.4.tgz"
+  integrity sha512-PyvJ1VbYjW8tVnVHvcasiqI9eNWf8EJnr0in1QWnhpSbpVpVpc4yjbgnu2pTrW9mPo/YjV4pF+qs6E97y9mdYQ==
   dependencies:
     tslib "^2.3.0"
   optionalDependencies:
@@ -185,7 +185,7 @@
     symbol-observable "4.0.0"
     yargs "17.7.2"
 
-"@angular/common@^18.0.0 || ^19.0.0", "@angular/common@^19.0.0", "@angular/common@^19.1.6", "@angular/common@19.1.6":
+"@angular/common@^19.0.0", "@angular/common@^19.0.0 || ^20.0.0", "@angular/common@^19.1.6", "@angular/common@19.1.6":
   version "19.1.6"
   resolved "https://registry.npmjs.org/@angular/common/-/common-19.1.6.tgz"
   integrity sha512-FkuejwbxsOLhcyOgDM/7YEYvMG3tuyOvr+831VzPwMwYp5QO9AUYtn4ffGf698JccbA+Ocw3BAdhPU6i+YZC1A==
@@ -218,7 +218,7 @@
   resolved "https://registry.npmjs.org/@angular/compiler/-/compiler-9.0.0.tgz"
   integrity sha512-ctjwuntPfZZT2mNj2NDIVu51t9cvbhl/16epc5xEwyzyDt76pX9UgwvY+MbXrf/C/FWwdtmNtfP698BKI+9leQ==
 
-"@angular/core@^18.0.0 || ^19.0.0", "@angular/core@^19.0.0", "@angular/core@^19.1.6", "@angular/core@19.1.6":
+"@angular/core@^19.0.0", "@angular/core@^19.0.0 || ^20.0.0", "@angular/core@^19.1.6", "@angular/core@19.1.6":
   version "19.1.6"
   resolved "https://registry.npmjs.org/@angular/core/-/core-19.1.6.tgz"
   integrity sha512-FD167URT+apxjzj9sG/MzffW5G6YyQiPQ6nrrIoYi9jeY3LYurybuOgvcXrU8PT4Z3+CKMq9k/ZnmrlHU72BpA==
@@ -230,17 +230,17 @@
   resolved "https://registry.npmjs.org/@angular/core/-/core-9.0.0.tgz"
   integrity sha512-6Pxgsrf0qF9iFFqmIcWmjJGkkCaCm6V5QNnxMy2KloO3SDq6QuMVRbN9RtC8Urmo25LP+eZ6ZgYqFYpdD8Hd9w==
 
-"@angular/forms@^18.0.0 || ^19.0.0", "@angular/forms@19.1.6":
+"@angular/forms@^19.0.0 || ^20.0.0", "@angular/forms@19.1.6":
   version "19.1.6"
   resolved "https://registry.npmjs.org/@angular/forms/-/forms-19.1.6.tgz"
   integrity sha512-uu/76KAwCAcDuhD67Vv78UvOC/tiprtFXOgqNCj0LK8vyFcvPsunb3nF/PtfF9rSHyslXAqxZhME+Ha2tU6Lpw==
   dependencies:
     tslib "^2.3.0"
 
-"@angular/material@^18.1.2":
-  version "18.1.2"
-  resolved "https://registry.npmjs.org/@angular/material/-/material-18.1.2.tgz"
-  integrity sha512-B56pofk3WMqqtNww2W33KRbAu69c+aGYFdNFW45DcdIw9OKV1x/HjhyEchSrUOPOXgJFVTYw2HRhp327ONpetw==
+"@angular/material@^19.1.4":
+  version "19.1.4"
+  resolved "https://registry.npmjs.org/@angular/material/-/material-19.1.4.tgz"
+  integrity sha512-bqliTnUnMiTG6Quvk16epiQPZQB0zV/L2ctPinFcP6NhahcQFfahjabUlgMlfBk5qObolJArJr5HCMiOmpOGIQ==
   dependencies:
     tslib "^2.3.0"
 
@@ -251,7 +251,7 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/platform-browser@^18.0.0 || ^19.0.0", "@angular/platform-browser@^19.0.0", "@angular/platform-browser@19.1.6":
+"@angular/platform-browser@^19.0.0", "@angular/platform-browser@^19.0.0 || ^20.0.0", "@angular/platform-browser@19.1.6":
   version "19.1.6"
   resolved "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-19.1.6.tgz"
   integrity sha512-sfWU+gMpqQ6GYtE3tAfDktftC01NgtqAOKfeCQ/KY2rxRTIxYahenW0Licuzgmd+8AZtmncoZaYX0Fd/5XMqzQ==
@@ -1346,6 +1346,11 @@
   resolved "https://registry.npmjs.org/@napi-rs/nice-linux-x64-gnu/-/nice-linux-x64-gnu-1.0.1.tgz"
   integrity sha512-XQAJs7DRN2GpLN6Fb+ZdGFeYZDdGl2Fn3TmFlqEL5JorgWKrQGRUrpGKbgZ25UeZPILuTKJ+OowG2avN8mThBA==
 
+"@napi-rs/nice-linux-x64-musl@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/@napi-rs/nice-linux-x64-musl/-/nice-linux-x64-musl-1.0.1.tgz"
+  integrity sha512-/rodHpRSgiI9o1faq9SZOp/o2QkKQg7T+DK0R5AkbnI/YxvAIEHf2cngjYzLMQSQgUhxym+LFr+UGZx4vK4QdQ==
+
 "@napi-rs/nice@^1.0.1":
   version "1.0.1"
   resolved "https://registry.npmjs.org/@napi-rs/nice/-/nice-1.0.1.tgz"
@@ -1487,6 +1492,11 @@
   resolved "https://registry.npmjs.org/@parcel/watcher-linux-x64-glibc/-/watcher-linux-x64-glibc-2.5.1.tgz"
   integrity sha512-GcESn8NZySmfwlTsIur+49yDqSny2IhPeZfXunQi48DMugKeZ7uy1FX83pO0X22sHntJ4Ub+9k34XQCX+oHt2A==
 
+"@parcel/watcher-linux-x64-musl@2.5.1":
+  version "2.5.1"
+  resolved "https://registry.npmjs.org/@parcel/watcher-linux-x64-musl/-/watcher-linux-x64-musl-2.5.1.tgz"
+  integrity sha512-n0E2EQbatQ3bXhcH2D1XIAANAcTZkQICBPVaxMeaCVBtOpBZpWJuf7LwyWPSBDITb7In8mqQgJ7gH8CILCURXg==
+
 "@parcel/watcher@^2.4.1":
   version "2.5.1"
   resolved "https://registry.npmjs.org/@parcel/watcher/-/watcher-2.5.1.tgz"
@@ -1536,6 +1546,11 @@
   version "4.30.1"
   resolved "https://registry.npmjs.org/@rollup/rollup-linux-x64-gnu/-/rollup-linux-x64-gnu-4.30.1.tgz"
   integrity sha512-UtgGb7QGgXDIO+tqqJ5oZRGHsDLO8SlpE4MhqpY9Llpzi5rJMvrK6ZGhsRCST2abZdBqIBeXW6WPD5fGK5SDwg==
+
+"@rollup/rollup-linux-x64-musl@4.30.1":
+  version "4.30.1"
+  resolved "https://registry.npmjs.org/@rollup/rollup-linux-x64-musl/-/rollup-linux-x64-musl-4.30.1.tgz"
+  integrity sha512-V9U8Ey2UqmQsBT+xTOeMzPzwDzyXmnAoO4edZhL7INkwQcaW1Ckv3WJX3qrrp/VHaDkEWIBWhRwP47r8cdrOow==
 
 "@rollup/wasm-node@^4.24.0":
   version "4.34.6"
