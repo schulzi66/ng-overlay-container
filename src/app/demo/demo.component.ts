@@ -4,9 +4,10 @@ import { NgOverlayContainerConfiguration, NgOverlayContainerService } from 'ng-o
 import { DemoOverlayComponent } from '../demo-overlay.component';
 
 @Component({
-  selector: 'app-demo',
-  templateUrl: './demo.component.html',
-  styleUrls: ['./demo.component.scss']
+    selector: 'app-demo',
+    templateUrl: './demo.component.html',
+    styleUrls: ['./demo.component.scss'],
+    standalone: false
 })
 export class DemoComponent {
   @ViewChild('originTemplate', { static: false, read: ViewContainerRef })
