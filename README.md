@@ -30,6 +30,7 @@
 ## Supported Versions
 
     The major versions reflect the used Angular version
+    20.x.x => Angular 20
     19.x.x => Angular 19
     18.x.x => Angular 18
     17.x.x => Angular 17
@@ -57,10 +58,10 @@ Validate the PeerDependencies:
 
 ```json
 "peerDependencies": {
-    "@angular/cdk": "^19.0.0",
-    "@angular/common": "^19.0.0",
-    "@angular/core": "^19.0.0",
-    "@angular/material": "^19.0.0"
+    "@angular/cdk": "^20.0.0",
+    "@angular/common": "^20.0.0",
+    "@angular/core": "^20.0.0",
+    "@angular/material": "^20.0.0"
 }
 ```
 
