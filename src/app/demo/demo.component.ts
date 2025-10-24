@@ -4,7 +4,7 @@ import { NgOverlayContainerConfiguration, NgOverlayContainerService } from 'ng-o
 import { DemoOverlayComponent } from '../demo-overlay.component';
 import { MatRadioGroup, MatRadioButton } from '@angular/material/radio';
 import { FormsModule } from '@angular/forms';
-import { NgFor } from '@angular/common';
+
 import { MatButton } from '@angular/material/button';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatSelect } from '@angular/material/select';
@@ -14,7 +14,7 @@ import { MatOption } from '@angular/material/core';
     selector: 'app-demo',
     templateUrl: './demo.component.html',
     styleUrls: ['./demo.component.scss'],
-    imports: [MatRadioGroup, FormsModule, NgFor, MatRadioButton, MatButton, MatFormField, MatLabel, MatSelect, MatOption]
+    imports: [MatRadioGroup, FormsModule, MatRadioButton, MatButton, MatFormField, MatLabel, MatSelect, MatOption]
 })
 export class DemoComponent {
   @ViewChild('originTemplate', { static: false, read: ViewContainerRef })

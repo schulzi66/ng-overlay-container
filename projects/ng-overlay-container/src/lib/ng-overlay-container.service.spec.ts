@@ -23,8 +23,8 @@ describe('NgOverlayContainerService', () => {
     imports: [OverlayModule, DragDropModule, NgPopoverComponent],
     providers: [NgOverlayContainerService, Overlay, Injector]
 }).overrideModule(BrowserDynamicTestingModule, {});
-    service = TestBed.get(NgOverlayContainerService);
-    overlay = TestBed.get(Overlay);
+    service = TestBed.inject(NgOverlayContainerService);
+    overlay = TestBed.inject(Overlay);
   });
 
   it('should create PopoverRef correctly', () => {

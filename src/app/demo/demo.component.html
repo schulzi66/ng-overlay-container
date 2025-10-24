@@ -10,8 +10,9 @@
         <h3>Common positions</h3>
         <mat-radio-group [(ngModel)]="selectedCommonPosition"
                          (change)="updateCommonPosition()">
-          <mat-radio-button *ngFor="let position of commonPositions"
-                            [value]="position">{{position}}</mat-radio-button>
+          @for (position of commonPositions; track position) {
+          <mat-radio-button [value]="position">{{position}}</mat-radio-button>
+          }
         </mat-radio-group>
       </div>
     </div>
@@ -66,8 +67,9 @@
         <mat-label>Width</mat-label>
         <mat-select [(ngModel)]="selectedWidth"
                     (selectionChange)="updateConfig()">
-          <mat-option *ngFor="let width of widths"
-                      [value]="width">{{width}}</mat-option>
+          @for (width of widths; track width) {
+          <mat-option [value]="width">{{width}}</mat-option>
+          }
         </mat-select>
       </mat-form-field>
     </div>
@@ -76,8 +78,9 @@
         <mat-label>Height</mat-label>
         <mat-select [(ngModel)]="selectedHeight"
                     (selectionChange)="updateConfig()">
-          <mat-option *ngFor="let height of heights"
-                      [value]="height">{{height}}</mat-option>
+          @for (height of heights; track height) {
+          <mat-option [value]="height">{{height}}</mat-option>
+          }
         </mat-select>
       </mat-form-field>
     </div>
@@ -86,8 +89,9 @@
         <mat-label>MinWidth</mat-label>
         <mat-select [(ngModel)]="selectedMinWidth"
                     (selectionChange)="updateConfig()">
-          <mat-option *ngFor="let width of minWidths"
-                      [value]="width">{{width}}</mat-option>
+          @for (width of minWidths; track width) {
+          <mat-option [value]="width">{{width}}</mat-option>
+          }
         </mat-select>
       </mat-form-field>
     </div>
@@ -96,38 +100,40 @@
         <mat-label>MinHeight</mat-label>
         <mat-select [(ngModel)]="selectedMinHeight"
                     (selectionChange)="updateConfig()">
-          <mat-option *ngFor="let height of minHeights"
-                      [value]="height">{{height}}</mat-option>
+          @for (height of minHeights; track height) {
+          <mat-option [value]="height">{{height}}</mat-option>
+          }
         </mat-select>
       </mat-form-field>
     </div>
     <!-- <div class="section">
-      <mat-form-field appearance="outline">
-        <mat-label>MaxWidth</mat-label>
-        <mat-select [(ngModel)]="selectedMaxWidth"
-                    (selectionChange)="updateConfig()">
-          <mat-option *ngFor="let maxWidth of maxWidths"
-                      [value]="maxWidth">{{maxWidth}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <div class="section">
-      <mat-form-field appearance="outline">
-        <mat-label>MaxHeight</mat-label>
-        <mat-select [(ngModel)]="selectedMaxHeight"
-                    (selectionChange)="updateConfig()">
-          <mat-option *ngFor="let maxHeight of maxHeights"
-                      [value]="maxHeight">{{maxHeight}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div> -->
+    <mat-form-field appearance="outline">
+      <mat-label>MaxWidth</mat-label>
+      <mat-select [(ngModel)]="selectedMaxWidth"
+        (selectionChange)="updateConfig()">
+        <mat-option *ngFor="let maxWidth of maxWidths"
+        [value]="maxWidth">{{maxWidth}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="section">
+    <mat-form-field appearance="outline">
+      <mat-label>MaxHeight</mat-label>
+      <mat-select [(ngModel)]="selectedMaxHeight"
+        (selectionChange)="updateConfig()">
+        <mat-option *ngFor="let maxHeight of maxHeights"
+        [value]="maxHeight">{{maxHeight}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div> -->
     <div class="section">
       <mat-form-field appearance="outline">
         <mat-label>OriginX</mat-label>
         <mat-select [(ngModel)]="selectedOriginX"
                     (selectionChange)="updateConfig()">
-          <mat-option *ngFor="let originX of originXs"
-                      [value]="originX">{{originX}}</mat-option>
+          @for (originX of originXs; track originX) {
+          <mat-option [value]="originX">{{originX}}</mat-option>
+          }
         </mat-select>
       </mat-form-field>
     </div>
@@ -136,8 +142,9 @@
         <mat-label>OriginY</mat-label>
         <mat-select [(ngModel)]="selectedOriginY"
                     (selectionChange)="updateConfig()">
-          <mat-option *ngFor="let originY of originYs"
-                      [value]="originY">{{originY}}</mat-option>
+          @for (originY of originYs; track originY) {
+          <mat-option [value]="originY">{{originY}}</mat-option>
+          }
         </mat-select>
       </mat-form-field>
     </div>
@@ -146,8 +153,9 @@
         <mat-label>OverlayX</mat-label>
         <mat-select [(ngModel)]="selectedOverlayX"
                     (selectionChange)="updateConfig()">
-          <mat-option *ngFor="let overlayX of overlayXs"
-                      [value]="overlayX">{{overlayX}}</mat-option>
+          @for (overlayX of overlayXs; track overlayX) {
+          <mat-option [value]="overlayX">{{overlayX}}</mat-option>
+          }
         </mat-select>
       </mat-form-field>
     </div>
@@ -156,8 +164,9 @@
         <mat-label>OverlayY</mat-label>
         <mat-select [(ngModel)]="selectedOverlayY"
                     (selectionChange)="updateConfig()">
-          <mat-option *ngFor="let overlayY of overlayYs"
-                      [value]="overlayY">{{overlayY}}</mat-option>
+          @for (overlayY of overlayYs; track overlayY) {
+          <mat-option [value]="overlayY">{{overlayY}}</mat-option>
+          }
         </mat-select>
       </mat-form-field>
     </div>
@@ -166,8 +175,9 @@
         <mat-label>OffsetX in px</mat-label>
         <mat-select [(ngModel)]="selectedOffsetX"
                     (selectionChange)="updateConfig()">
-          <mat-option *ngFor="let offsetX of offsetXs"
-                      [value]="offsetX">{{offsetX}}</mat-option>
+          @for (offsetX of offsetXs; track offsetX) {
+          <mat-option [value]="offsetX">{{offsetX}}</mat-option>
+          }
         </mat-select>
       </mat-form-field>
     </div>
@@ -176,8 +186,9 @@
         <mat-label>OffsetY in px</mat-label>
         <mat-select [(ngModel)]="selectedOffsetY"
                     (selectionChange)="updateConfig()">
-          <mat-option *ngFor="let offsetY of offsetYs"
-                      [value]="offsetY">{{offsetY}}</mat-option>
+          @for (offsetY of offsetYs; track offsetY) {
+          <mat-option [value]="offsetY">{{offsetY}}</mat-option>
+          }
         </mat-select>
       </mat-form-field>
     </div>
@@ -188,9 +199,10 @@
         <mat-label>HasBackdrop</mat-label>
         <mat-select [(ngModel)]="selectedHasBackdrop"
                     (selectionChange)="updateConfig()">
-          <mat-option *ngFor="let hasBackdrop of hasBackdrops"
-                      [value]="hasBackdrop">{{hasBackdrop}}
+          @for (hasBackdrop of hasBackdrops; track hasBackdrop) {
+          <mat-option [value]="hasBackdrop">{{hasBackdrop}}
           </mat-option>
+          }
         </mat-select>
       </mat-form-field>
     </div>
@@ -199,9 +211,10 @@
         <mat-label>BackdropClass</mat-label>
         <mat-select [(ngModel)]="selectedBackdropClass"
                     (selectionChange)="updateConfig()">
-          <mat-option *ngFor="let backdropClass of backdropClasses"
-                      [value]="backdropClass">
+          @for (backdropClass of backdropClasses; track backdropClass) {
+          <mat-option [value]="backdropClass">
             {{backdropClass}}</mat-option>
+          }
         </mat-select>
       </mat-form-field>
     </div>
@@ -210,9 +223,10 @@
         <mat-label>UseGlobalPositionStrategy</mat-label>
         <mat-select [(ngModel)]="selectedUseGlobalPositionStrategy"
                     (selectionChange)="updateConfig()">
-          <mat-option *ngFor="let useGlobal of useGlobalPositionStrategy"
-                      [value]="useGlobal">
+          @for (useGlobal of useGlobalPositionStrategy; track useGlobal) {
+          <mat-option [value]="useGlobal">
             {{useGlobal}}</mat-option>
+          }
         </mat-select>
       </mat-form-field>
     </div>
@@ -221,9 +235,10 @@
         <mat-label>IsDraggable</mat-label>
         <mat-select [(ngModel)]="selectedIsDraggable"
                     (selectionChange)="updateConfig()">
-          <mat-option *ngFor="let draggable of isDraggable"
-                      [value]="draggable">{{draggable}}
+          @for (draggable of isDraggable; track draggable) {
+          <mat-option [value]="draggable">{{draggable}}
           </mat-option>
+          }
         </mat-select>
       </mat-form-field>
     </div>
@@ -232,9 +247,10 @@
         <mat-label>IsResizable</mat-label>
         <mat-select [(ngModel)]="selectedIsResizable"
                     (selectionChange)="updateConfig()">
-          <mat-option *ngFor="let resizable of isResizable"
-                      [value]="resizable">{{resizable}}
+          @for (resizable of isResizable; track resizable) {
+          <mat-option [value]="resizable">{{resizable}}
           </mat-option>
+          }
         </mat-select>
       </mat-form-field>
     </div>
@@ -243,9 +259,10 @@
         <mat-label>DisableCloseOnBackdropClick</mat-label>
         <mat-select [(ngModel)]="selectedDisableBackdropClose"
                     (selectionChange)="updateConfig()">
-          <mat-option *ngFor="let disable of disableBackdropClose"
-                      [value]="disable">{{disable}}
+          @for (disable of disableBackdropClose; track disable) {
+          <mat-option [value]="disable">{{disable}}
           </mat-option>
+          }
         </mat-select>
       </mat-form-field>
     </div>

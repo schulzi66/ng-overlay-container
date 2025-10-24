@@ -3,7 +3,7 @@ import { NgOverlayContainerContent } from '../models/ng-overlay-container-conten
 import { NgPopoverRenderMethod } from '../models/ng-popover-render-method.type';
 import { NgPopoverRef } from './ng-popover-reference';
 import { CdkDrag, CdkDragHandle } from '@angular/cdk/drag-drop';
-import { NgSwitch, NgSwitchCase, NgTemplateOutlet, NgComponentOutlet } from '@angular/common';
+import { NgTemplateOutlet, NgComponentOutlet } from '@angular/common';
 
 /**
  * The host component that embeds the provided content
@@ -12,7 +12,7 @@ import { NgSwitch, NgSwitchCase, NgTemplateOutlet, NgComponentOutlet } from '@an
     templateUrl: './ng-popover.component.html',
     styleUrls: ['./ng-popover.component.scss'],
     encapsulation: ViewEncapsulation.None,
-    imports: [CdkDrag, CdkDragHandle, NgSwitch, NgSwitchCase, NgTemplateOutlet, NgComponentOutlet]
+    imports: [CdkDrag, CdkDragHandle, NgTemplateOutlet, NgComponentOutlet]
 })
 export class NgPopoverComponent implements OnInit {
     public ngRenderMethod: NgPopoverRenderMethod;
