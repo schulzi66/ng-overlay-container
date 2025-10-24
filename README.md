@@ -30,6 +30,7 @@
 ## Supported Versions
 
     The major versions reflect the used Angular version
+    20.x.x => Angular 20
     19.x.x => Angular 19
     18.x.x => Angular 18
     17.x.x => Angular 17
@@ -43,6 +44,7 @@
     0.0.x => Angular 9
 
 ## Breaking Changes
+- From `v20.0.0` on there won't be any more NgOverlayContainerModule. Please provide the NgOverlayContainerService either globally with `provideNgOverlayContainer()` or directly in a component as stated below.
 - From `v16.0.2` on there will be no default width and heigth. The size adapts dynamically to the content.
 
 ## Getting Started
@@ -56,10 +58,10 @@ Validate the PeerDependencies:
 
 ```json
 "peerDependencies": {
-    "@angular/cdk": "^19.0.0",
-    "@angular/common": "^19.0.0",
-    "@angular/core": "^19.0.0",
-    "@angular/material": "^19.0.0"
+    "@angular/cdk": "^20.0.0",
+    "@angular/common": "^20.0.0",
+    "@angular/core": "^20.0.0",
+    "@angular/material": "^20.0.0"
 }
 ```
 
@@ -77,16 +79,32 @@ If you are not using Angular Material but the Angular CDK on its own, you have t
 @import '@angular/cdk/overlay-prebuilt.css';
 ```
 
-Import the `NgOverlayContainerModule` in your `app.module`:
+You have two options to provide the NgOverlayContainerService:
+
+1. Provide it globally with `provideNgOverlayContainer()` as an EnvironmentProvider:
 
 ```typescript
-import { NgOverlayContainerModule } from 'ng-overlay-container';
+import { provideNgOverlayContainer } from 'ng-overlay-container';
 
-@NgModule({
-    declarations: [...],
-    imports: [NgOverlayContainerModule], // <-- Module import
-    bootstrap: [...]
+bootstrapApplication(AppComponent, {
+    providers: [
+        ...
+        provideNgOverlayContainer() // <-- Service import
+        ...
+    ]
 })
+```
+2. Provide it in a component:
+
+```typescript
+import { NgOverlayContainerService } from 'ng-overlay-container';
+
+@Component({
+    ...
+    providers: [NgOverlayContainerService] // <-- Service import
+    ...
+})
+export class MyComponent {}
 ```
 
 ## Usage

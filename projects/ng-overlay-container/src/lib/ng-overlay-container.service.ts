@@ -1,9 +1,9 @@
 import { ConnectionPositionPair, Overlay, OverlayConfig, PositionStrategy } from '@angular/cdk/overlay';
-import { ComponentPortal, PortalInjector } from '@angular/cdk/portal';
+import { ComponentPortal } from '@angular/cdk/portal';
 import { Injectable, Injector } from '@angular/core';
 import {
-    DEFAULT_OVERLAY_CONFIGURATION,
-    NgOverlayContainerConfiguration
+  DEFAULT_OVERLAY_CONFIGURATION,
+  NgOverlayContainerConfiguration
 } from './models/ng-overlay-container-configuration.interface';
 import { NgOverlayContainerParameters } from './models/ng-overlay-container-parameters.interface';
 import { BOTTOM_POSITION, LEFT_POSITION, RIGHT_POSITION, TOP_POSITION } from './models/ng-overlay-container-positions';
@@ -114,8 +114,7 @@ export class NgOverlayContainerService {
     ];
   }
 
-  private createInjector(popoverRef: NgPopoverRef, injector: Injector): PortalInjector {
-    const tokens = new WeakMap([[NgPopoverRef, popoverRef]]);
-    return new PortalInjector(injector, tokens);
+  private createInjector(popoverRef: NgPopoverRef, injector: Injector): Injector {
+    return Injector.create({providers: [{provide: NgPopoverRef, useValue: popoverRef}]});
   }
 }

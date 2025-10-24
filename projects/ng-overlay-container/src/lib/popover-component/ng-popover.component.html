@@ -5,18 +5,15 @@
      [cdkDragBoundary]="'body'"
      id="ng-popover"
      class="ng-popover">
-  <ng-container [ngSwitch]="ngRenderMethod">
-
-    <div *ngSwitchCase="'text'"
-         [innerHTML]="content"></div>
-
-    <ng-container *ngSwitchCase="'template'">
-      <ng-container *ngTemplateOutlet="content; context: context"></ng-container>
-    </ng-container>
-
-    <ng-container *ngSwitchCase="'component'">
-      <ng-container *ngComponentOutlet="content"></ng-container>
-    </ng-container>
-
-  </ng-container>
+  @switch (ngRenderMethod) {
+  @case ('text') {
+  <div [innerHTML]="content"></div>
+  }
+  @case ('template') {
+  <ng-container *ngTemplateOutlet="content; context: context"></ng-container>
+  }
+  @case ('component') {
+  <ng-container *ngComponentOutlet="content"></ng-container>
+  }
+  }
 </div>
