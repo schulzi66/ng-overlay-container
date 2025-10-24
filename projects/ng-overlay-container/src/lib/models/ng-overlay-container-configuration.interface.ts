@@ -46,7 +46,7 @@ export interface NgOverlayContainerConfiguration {
   backdropClass?: string;
 
   /**
-   * Wether the overlay should be positioned globaly on the screen.
+   * Wether the overlay should be positioned globally on the screen.
    *
    * Default: false
    */

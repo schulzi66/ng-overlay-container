@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { MatButton, MatIconButton } from '@angular/material/button';
+import { MatFormField, MatLabel } from '@angular/material/form-field';
+import { MatIcon } from '@angular/material/icon';
+import { MatInput } from '@angular/material/input';
 import { NgPopoverRef } from 'ng-overlay-container';
+
 @Component({
     selector: 'demo-overlay',
     template: `
@@ -24,7 +30,7 @@ import { NgPopoverRef } from 'ng-overlay-container';
       <button style="margin: 10px;" mat-stroked-button color="primary" (click)="close()">Pass data back</button>
     </div>
   `,
-    standalone: false
+    imports: [MatIconButton, MatIcon, FormsModule, MatFormField, MatLabel, MatInput, MatButton]
 })
 export class DemoOverlayComponent {
   private isExpanded: boolean;

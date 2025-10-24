@@ -11,8 +11,8 @@ describe('DemoComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ DemoComponent ]
-    })
+    imports: [DemoComponent]
+})
     .compileComponents();
   }));
 

@@ -43,6 +43,7 @@
     0.0.x => Angular 9
 
 ## Breaking Changes
+- From `v20.0.0` on there won't be any more NgOverlayContainerModule. Please provide the NgOverlayContainerService either globally with `provideNgOverlayContainer()` or directly in a component as stated below.
 - From `v16.0.2` on there will be no default width and heigth. The size adapts dynamically to the content.
 
 ## Getting Started
@@ -77,16 +78,32 @@ If you are not using Angular Material but the Angular CDK on its own, you have t
 @import '@angular/cdk/overlay-prebuilt.css';
 ```
 
-Import the `NgOverlayContainerModule` in your `app.module`:
+You have two options to provide the NgOverlayContainerService:
+
+1. Provide it globally with `provideNgOverlayContainer()` as an EnvironmentProvider:
 
 ```typescript
-import { NgOverlayContainerModule } from 'ng-overlay-container';
+import { provideNgOverlayContainer } from 'ng-overlay-container';
 
-@NgModule({
-    declarations: [...],
-    imports: [NgOverlayContainerModule], // <-- Module import
-    bootstrap: [...]
+bootstrapApplication(AppComponent, {
+    providers: [
+        ...
+        provideNgOverlayContainer() // <-- Service import
+        ...
+    ]
 })
+```
+2. Provide it in a component:
+
+```typescript
+import { NgOverlayContainerService } from 'ng-overlay-container';
+
+@Component({
+    ...
+    providers: [NgOverlayContainerService] // <-- Service import
+    ...
+})
+export class MyComponent {}
 ```
 
 ## Usage

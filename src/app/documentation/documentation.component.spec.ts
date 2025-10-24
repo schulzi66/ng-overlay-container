@@ -11,8 +11,8 @@ describe('DocumentationComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ DocumentationComponent ]
-    })
+    imports: [DocumentationComponent]
+})
     .compileComponents();
   }));
 

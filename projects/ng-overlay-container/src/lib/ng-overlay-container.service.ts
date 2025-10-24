@@ -2,8 +2,8 @@ import { ConnectionPositionPair, Overlay, OverlayConfig, PositionStrategy } from
 import { ComponentPortal, PortalInjector } from '@angular/cdk/portal';
 import { Injectable, Injector } from '@angular/core';
 import {
-    DEFAULT_OVERLAY_CONFIGURATION,
-    NgOverlayContainerConfiguration
+  DEFAULT_OVERLAY_CONFIGURATION,
+  NgOverlayContainerConfiguration
 } from './models/ng-overlay-container-configuration.interface';
 import { NgOverlayContainerParameters } from './models/ng-overlay-container-parameters.interface';
 import { BOTTOM_POSITION, LEFT_POSITION, RIGHT_POSITION, TOP_POSITION } from './models/ng-overlay-container-positions';
