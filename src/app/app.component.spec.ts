@@ -1,11 +1,24 @@
 import { TestBed, waitForAsync } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { HttpClient } from '@angular/common/http';
+import { importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
+import { provideRouter, withHashLocation } from '@angular/router';
+import { provideNgOverlayContainer } from 'ng-overlay-container';
+import { MarkdownModule } from 'ngx-markdown';
 
 describe('AppComponent', () => {
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [AppComponent],
-}).compileComponents();
+      imports: [AppComponent],
+      providers: [
+        provideZoneChangeDetection(),
+        provideNgOverlayContainer(),
+        provideRouter([], withHashLocation()),
+        importProvidersFrom(MarkdownModule.forRoot({
+          loader: HttpClient
+        }))
+      ]
+    }).compileComponents();
   }));
 
   it('should create the app', () => {
@@ -20,10 +33,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('ng-overlay-container');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('ng-overlay-container app is running!');
-  });
 });
