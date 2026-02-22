@@ -1,3 +1,4 @@
+import './prism-init';
 import { CommonModule } from '@angular/common';
 import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { enableProdMode, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';

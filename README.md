@@ -61,10 +61,10 @@ Validate the PeerDependencies:
 
 ```json
 "peerDependencies": {
-    "@angular/cdk": "^20.0.0",
-    "@angular/common": "^20.0.0",
-    "@angular/core": "^20.0.0",
-    "@angular/material": "^20.0.0"
+    "@angular/cdk": "^21.0.0",
+    "@angular/common": "^21.0.0",
+    "@angular/core": "^21.0.0",
+    "@angular/material": "^21.0.0"
 }
 ```
 
