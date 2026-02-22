@@ -3,28 +3,16 @@
   "version": "21.0.0",
   "description": "Making the creation of overlays a piece of 🍰",
   "author": "Marius Schulze",
-  "contributors": [
-    "Marius Schulze",
-    "Derek Burgman <derek@dereekb.com>"
-  ],
+  "contributors": ["Marius Schulze", "Derek Burgman <derek@dereekb.com>"],
   "repository": {
     "type": "git",
-    "url": "https://github.com/schulzi66/ng-overlay-container.git"
+    "url": "git+https://github.com/schulzi66/ng-overlay-container.git"
   },
   "bugs": {
     "url": "https://github.com/schulzi66/ng-overlay-container/issues"
   },
   "homepage": "https://ng-overlay-container.netlify.app",
-  "keywords": [
-    "angular",
-    "cdk",
-    "typescript",
-    "overlay",
-    "container",
-    "material",
-    "popup",
-    "popover"
-  ],
+  "keywords": ["angular", "cdk", "typescript", "overlay", "container", "material", "popup", "popover"],
   "license": "MIT",
   "dependencies": {
     "tslib": "^2.0.0"
