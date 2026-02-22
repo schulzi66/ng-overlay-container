@@ -1,9 +1,13 @@
 /* tslint:disable:no-unused-variable */
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { DebugElement, importProvidersFrom } from '@angular/core';
 
 import { DocumentationComponent } from './documentation.component';
+import { HttpClient } from '@angular/common/http';
+import { MarkdownModule } from 'ngx-markdown';
+import { provideRouter, withHashLocation } from '@angular/router';
+import { provideNgOverlayContainer } from 'ng-overlay-container';
 
 describe('DocumentationComponent', () => {
   let component: DocumentationComponent;
@@ -11,9 +15,15 @@ describe('DocumentationComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-    imports: [DocumentationComponent]
-})
-    .compileComponents();
+      imports: [DocumentationComponent],
+      providers: [
+        provideNgOverlayContainer(),
+        provideRouter([], withHashLocation()),
+        importProvidersFrom(MarkdownModule.forRoot({
+          loader: HttpClient
+        }))
+      ]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

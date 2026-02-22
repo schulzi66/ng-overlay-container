@@ -10,6 +10,7 @@
 **ng-overlay-container** makes creating floating overlays for an angular application a breeze. It abstracts the angular cdk and provides a highly customizable interface for you to plug-n-use.
 
 ## Table of content
+
 - [Table of content](#table-of-content)
 - [Supported Versions](#supported-versions)
 - [Breaking Changes](#breaking-changes)
@@ -26,10 +27,10 @@
     - [Order Of Fallback Positions](#order-of-fallback-positions)
 - [Contribute](#contribute)
 
-
 ## Supported Versions
 
     The major versions reflect the used Angular version
+    21.x.x => Angular 21
     20.x.x => Angular 20
     19.x.x => Angular 19
     18.x.x => Angular 18
@@ -44,12 +45,14 @@
     0.0.x => Angular 9
 
 ## Breaking Changes
+
 - From `v20.0.0` on there won't be any more NgOverlayContainerModule. Please provide the NgOverlayContainerService either globally with `provideNgOverlayContainer()` or directly in a component as stated below.
 - From `v16.0.2` on there will be no default width and heigth. The size adapts dynamically to the content.
 
 ## Getting Started
 
 Install with:
+
 ```
 $ npm i ng-overlay-container
 ```
@@ -58,10 +61,10 @@ Validate the PeerDependencies:
 
 ```json
 "peerDependencies": {
-    "@angular/cdk": "^20.0.0",
-    "@angular/common": "^20.0.0",
-    "@angular/core": "^20.0.0",
-    "@angular/material": "^20.0.0"
+    "@angular/cdk": "^21.0.0",
+    "@angular/common": "^21.0.0",
+    "@angular/core": "^21.0.0",
+    "@angular/material": "^21.0.0"
 }
 ```
 
@@ -76,7 +79,7 @@ Add a material theme e.g. a prebuild one (if not done already):
 If you are not using Angular Material but the Angular CDK on its own, you have to include a small set of structural styles in your global stylessheet to use the overlay correctly:
 
 ```css
-@import '@angular/cdk/overlay-prebuilt.css';
+@import "@angular/cdk/overlay-prebuilt.css";
 ```
 
 You have two options to provide the NgOverlayContainerService:
@@ -94,6 +97,7 @@ bootstrapApplication(AppComponent, {
     ]
 })
 ```
+
 2. Provide it in a component:
 
 ```typescript
@@ -239,6 +243,7 @@ export class YourComponent {
 ```
 
 ## API
+
 ### Open Method Definition
 
 ```typescript
@@ -308,7 +313,7 @@ export interface NgOverlayContainerConfiguration {
   isDraggable?: boolean;
   isResizable?: boolean;
   disableBackdropClose?: boolean;
-  fallbackPositions?: ConnectionPositionPair[]
+  fallbackPositions?: ConnectionPositionPair[];
 }
 ```
 
@@ -336,7 +341,7 @@ export const DEFAULT_OVERLAY_CONFIGURATION: NgOverlayContainerConfiguration = {
   isDraggable: false,
   isResizable: true,
   disableBackdropClose: false,
-  fallbackPositions: []
+  fallbackPositions: [],
 };
 ```
 
@@ -379,22 +384,22 @@ Custom fallback positions will have priority over the default positions.
 }
 ```
 
-
-
 ## Contribute
+
 First of, thank you for considering to contribute! 🎉👍
 
 Contributions, enhancements, and bug-fixes are welcome! [Open an issue](https://github.com/schulzi66/ng-overlay-container/issues) on GitHub and [submit a pull request](https://github.com/schulzi66/ng-overlay-container/pulls).
 
 To do so, follow these steps:
+
 1. Fork the repository as described on the [official Github Docs](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
 2. Open the <code>ng-overlay-container.code-workspace</code>
-2. Run <code>npm install</code>
-3. Run <code>npm run start</code> to run the demo application
-4. Make your changes/fix
-    - Write unit tests for any code change
-    - Update the README.md accordingly
-    - Increase the version number in `projects/ng-overlay-container/package.json`
-5. Run <code>npm run test</code> to execute all unit tests locally
-6. Submit a pull request to bring your changes to this repository
-    - Provide a description for your changes
+3. Run <code>npm install</code>
+4. Run <code>npm run start</code> to run the demo application
+5. Make your changes/fix
+   - Write unit tests for any code change
+   - Update the README.md accordingly
+   - Increase the version number in `projects/ng-overlay-container/package.json`
+6. Run <code>npm run test</code> to execute all unit tests locally
+7. Submit a pull request to bring your changes to this repository
+   - Provide a description for your changes

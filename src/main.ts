@@ -1,6 +1,7 @@
+import './prism-init';
 import { CommonModule } from '@angular/common';
 import { HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { enableProdMode, importProvidersFrom } from '@angular/core';
+import { enableProdMode, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -35,14 +36,15 @@ if (environment.production) {
 }
 
 bootstrapApplication(AppComponent, {
-    providers: [
-        importProvidersFrom(BrowserModule, CommonModule, FormsModule, MarkdownModule.forRoot({
-            loader: HttpClient
-        }), MatIconModule, MatInputModule, MatSidenavModule, MatRadioModule, MatButtonModule, MatSelectModule),
-        provideHttpClient(withInterceptorsFromDi()),
-        provideAnimations(),
-        provideRouter(routes, withHashLocation()),
-        provideNgOverlayContainer()
-    ]
+  providers: [
+    // provideZoneChangeDetection(), // Project still uses zone.js, zoneless is the default in Angular 21+
+    importProvidersFrom(BrowserModule, CommonModule, FormsModule, MarkdownModule.forRoot({
+      loader: HttpClient
+    }), MatIconModule, MatInputModule, MatSidenavModule, MatRadioModule, MatButtonModule, MatSelectModule),
+    provideHttpClient(withInterceptorsFromDi()),
+    provideAnimations(),
+    provideRouter(routes, withHashLocation()),
+    provideNgOverlayContainer()
+  ]
 })
   .catch(err => console.error(err));

@@ -57,6 +57,8 @@
  */
 import 'zone.js';  // Included with Angular CLI.
 
+// NOTE: Zone.js still appears to be required for Karma tests to work properly. App works with zoneless detection otherwise. Can remove zone.js in the future.
+
 
 /***************************************************************************************************
  * APPLICATION IMPORTS

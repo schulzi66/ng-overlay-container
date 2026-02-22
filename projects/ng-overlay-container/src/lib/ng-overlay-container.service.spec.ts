@@ -7,12 +7,14 @@ import {
   GlobalPositionStrategy
 } from '@angular/cdk/overlay';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
+import { BrowserTestingModule } from '@angular/platform-browser/testing';
 
-import { Injector } from '@angular/core';
+import { importProvidersFrom, Injector } from '@angular/core';
 import { NgOverlayContainerService } from './ng-overlay-container.service';
 import { NgOverlayContainerParameters } from './models/ng-overlay-container-parameters.interface';
 import { DEFAULT_OVERLAY_CONFIGURATION, NgOverlayContainerConfiguration } from './models/ng-overlay-container-configuration.interface';
+import { HttpClient } from '@angular/common/http';
+import { MarkdownModule } from 'ngx-markdown';
 
 describe('NgOverlayContainerService', () => {
   let service: NgOverlayContainerService;
@@ -20,9 +22,14 @@ describe('NgOverlayContainerService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [OverlayModule, DragDropModule, NgPopoverComponent],
-    providers: [NgOverlayContainerService, Overlay, Injector]
-}).overrideModule(BrowserDynamicTestingModule, {});
+      imports: [OverlayModule, DragDropModule, NgPopoverComponent],
+      providers: [
+        importProvidersFrom(MarkdownModule.forRoot({
+          loader: HttpClient
+        })),
+        NgOverlayContainerService, Overlay, Injector
+      ]
+    }).overrideModule(BrowserTestingModule, {});
     service = TestBed.inject(NgOverlayContainerService);
     overlay = TestBed.inject(Overlay);
   });

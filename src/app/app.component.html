@@ -1,36 +1,42 @@
 <mat-drawer-container class="drawer-container">
-
-  <mat-drawer #drawer
-              mode="over"
-              autosize>
+  <mat-drawer #drawer mode="over" autosize>
     <div class="menu">
-
       <h3>NgOverlayContainer 🚀</h3>
 
       <div class="menu-entries">
-        <a [routerLink]="['/demo']"
-           routerLinkActive="router-link-active"
-           (click)="drawer.close()">Demo ✨</a>
-        <a [routerLink]="['/docs']"
-           routerLinkActive="router-link-active"
-           (click)="drawer.close()">Documentation 📖</a>
-        <a href="https://github.com/schulzi66/ng-overlay-container"
-           target="_blank"
-           rel="noopener"
-           (click)="drawer.close()">Github ⭐</a>
-        <a href="https://www.npmjs.com/package/ng-overlay-container"
-           target="_blank"
-           rel="noopener"
-           (click)="drawer.close()">NPM 🎁</a>
+        <a
+          [routerLink]="['/demo']"
+          routerLinkActive="router-link-active"
+          (click)="drawer.close()"
+          >Demo ✨</a
+        >
+        <a
+          [routerLink]="['/docs']"
+          routerLinkActive="router-link-active"
+          (click)="drawer.close()"
+          >Documentation 📖</a
+        >
+        <a
+          href="https://github.com/schulzi66/ng-overlay-container"
+          target="_blank"
+          rel="noopener"
+          (click)="drawer.close()"
+          >Github ⭐</a
+        >
+        <a
+          href="https://www.npmjs.com/package/ng-overlay-container"
+          target="_blank"
+          rel="noopener"
+          (click)="drawer.close()"
+          >NPM 🎁</a
+        >
       </div>
     </div>
   </mat-drawer>
 
   <!-- Toolbar -->
-  <div class="toolbar"
-       role="banner">
-    <button mat-icon-button
-            (click)="drawer.toggle()">
+  <div class="toolbar" role="banner">
+    <button mat-icon-button (click)="drawer.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
     <h3>NgOverlayContainer 🚀</h3>
@@ -42,18 +48,24 @@
   <!-- Footer -->
   <footer>
     Love NgOverlayContainer?&nbsp;
-    <a href="https://github.com/schulzi66/ng-overlay-container"
-       target="_blank"
-       rel="noopener"> Give my repo a star.
+    <a
+      href="https://github.com/schulzi66/ng-overlay-container"
+      target="_blank"
+      rel="noopener"
+    >
+      Give my repo a star.
       <div class="github-star-badge">
-        <svg class="material-icons"
-             xmlns="http://www.w3.org/2000/svg"
-             width="24"
-             height="24"
-             viewBox="0 0 24 24">
-          <path d="M0 0h24v24H0z"
-                fill="none" />
-          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+        <svg
+          class="material-icons"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path d="M0 0h24v24H0z" fill="none" />
+          <path
+            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+          />
         </svg>
         Star
       </div>

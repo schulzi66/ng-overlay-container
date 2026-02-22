@@ -21,13 +21,13 @@ export class NgPopoverComponent implements OnInit {
     public isDraggable?: boolean;
 
     @HostListener('document:keydown', ['$event'])
-    private handleKeydown(event: KeyboardEvent) {
+    protected handleKeydown(event: KeyboardEvent) {
         if (event.key === 'Escape') {
-          this.ngPopoverRef.close();
+            this.ngPopoverRef.close();
         }
-      }
+    }
 
-    public constructor(private ngPopoverRef: NgPopoverRef) {}
+    public constructor(private ngPopoverRef: NgPopoverRef) { }
 
     ngOnInit() {
         this.content = this.ngPopoverRef.content;
