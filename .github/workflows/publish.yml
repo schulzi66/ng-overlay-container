@@ -5,13 +5,22 @@ on:
     branches:
       - master
 
+permissions:
+  id-token: write   # Required for npm OIDC Trusted Publishing
+  contents: read
+
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: npm install --force && npm run copy-readme && npm run build-lib:prod 
-      - uses: JS-DevTools/npm-publish@v1
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
-          token: ${{ secrets.NPM_TOKEN }}
-          package: ./dist/ng-overlay-container/package.json
+          node-version: "22"
+          registry-url: "https://registry.npmjs.org"
+
+      - run: npm install --force && npm run copy-readme && npm run build-lib:prod
+
+      - run: npm publish
+        working-directory: ./dist/ng-overlay-container
