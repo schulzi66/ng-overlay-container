@@ -115,6 +115,6 @@ export class NgOverlayContainerService {
   }
 
   private createInjector(popoverRef: NgPopoverRef, injector: Injector): Injector {
-    return Injector.create({providers: [{provide: NgPopoverRef, useValue: popoverRef}]});
+    return Injector.create({ parent: injector, providers: [{ provide: NgPopoverRef, useValue: popoverRef }] });
   }
 }
