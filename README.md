@@ -214,7 +214,8 @@ export class YourComponent {
          */
         ngPopoverRef.afterClosed$.subscribe(result => {
             if (result.data) {
-                this.returnedValue = result.data.returnValue;
+                // `returnedValue` is a signal, so the view updates when this emits.
+                this.returnedValue.set(result.data.returnValue);
             }
         });
 
@@ -242,6 +243,11 @@ export class YourComponent {
     }
 }
 ```
+
+> **Zoneless change detection:** `afterClosed$` emits asynchronously (after the overlay
+> is torn down), so updating component state inside the subscription will not trigger
+> change detection on its own in a zoneless app. Notify Angular yourself — write to a
+> `signal` (as above), use the `async` pipe, or call `ChangeDetectorRef.markForCheck()`.
 
 ## API
 

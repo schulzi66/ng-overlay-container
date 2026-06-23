@@ -84,7 +84,9 @@ export class DemoComponent {
     this.updateConfig();
   }
 
-  public returnedValue: string;
+  // Signal so the view updates when `afterClosed$` emits. In a zoneless app a plain
+  // property assignment inside the subscription would not trigger change detection.
+  public returnedValue = signal<string | undefined>(undefined);
 
   public updateConfig(): void {
     this.overlayConfiguration = {
@@ -179,7 +181,7 @@ export class DemoComponent {
 
     ngPopoverRef.afterClosed$.subscribe((result) => {
       if (result.data) {
-        this.returnedValue = result.data.returnValue;
+        this.returnedValue.set(result.data.returnValue);
       }
     });
   }

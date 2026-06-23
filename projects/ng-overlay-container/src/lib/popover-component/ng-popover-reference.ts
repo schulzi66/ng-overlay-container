@@ -14,7 +14,17 @@ export class NgPopoverRef<T = any, R = any> {
   private toggled: boolean;
 
   /**
-   * Observable to retrieve the returned data
+   * Observable to retrieve the returned data after the popover closes.
+   *
+   * Emits asynchronously (after overlay teardown), mirroring Angular Material's
+   * `MatDialogRef.afterClosed()`. In a zoneless application, updating state inside
+   * this subscription does NOT automatically trigger change detection — notify
+   * Angular yourself, e.g. write to a `signal`, use the `async` pipe, or call
+   * `ChangeDetectorRef.markForCheck()`. Otherwise the value renders only on the
+   * next unrelated change-detection pass.
+   *
+   * @example
+   * ref.afterClosed$.subscribe(result => this.value.set(result.data));
    */
   public afterClosed$ = this.afterClosed.asObservable();
 
@@ -84,10 +94,16 @@ export class NgPopoverRef<T = any, R = any> {
 
   private _close(type: NgPopoverCloseType, data: R): void {
     this.overlay.dispose();
-    this.afterClosed.next({
-      type,
-      data
+    // Emit in a subsequent task so consumers that update bound state in `afterClosed$`
+    // don't trigger NG0100 (ExpressionChangedAfterItHasBeenCheckedError) when `close()`
+    // is invoked from within another view's event handler. This mirrors Angular
+    // Material's `MatDialogRef.afterClosed()`, which emits asynchronously after teardown.
+    setTimeout(() => {
+      this.afterClosed.next({
+        type,
+        data
+      });
+      this.afterClosed.complete();
     });
-    this.afterClosed.complete();
   }
 }
