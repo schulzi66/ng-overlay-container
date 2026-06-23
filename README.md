@@ -30,6 +30,7 @@
 ## Supported Versions
 
     The major versions reflect the used Angular version
+    22.x.x => Angular 22
     21.x.x => Angular 21
     20.x.x => Angular 20
     19.x.x => Angular 19
@@ -61,10 +62,10 @@ Validate the PeerDependencies:
 
 ```json
 "peerDependencies": {
-    "@angular/cdk": "^21.0.0",
-    "@angular/common": "^21.0.0",
-    "@angular/core": "^21.0.0",
-    "@angular/material": "^21.0.0"
+    "@angular/cdk": "^22.0.0",
+    "@angular/common": "^22.0.0",
+    "@angular/core": "^22.0.0",
+    "@angular/material": "^22.0.0"
 }
 ```
 
@@ -213,7 +214,8 @@ export class YourComponent {
          */
         ngPopoverRef.afterClosed$.subscribe(result => {
             if (result.data) {
-                this.returnedValue = result.data.returnValue;
+                // `returnedValue` is a signal, so the view updates when this emits.
+                this.returnedValue.set(result.data.returnValue);
             }
         });
 
@@ -241,6 +243,11 @@ export class YourComponent {
     }
 }
 ```
+
+> **Zoneless change detection:** `afterClosed$` emits asynchronously (after the overlay
+> is torn down), so updating component state inside the subscription will not trigger
+> change detection on its own in a zoneless app. Notify Angular yourself — write to a
+> `signal` (as above), use the `async` pipe, or call `ChangeDetectorRef.markForCheck()`.
 
 ## API
 

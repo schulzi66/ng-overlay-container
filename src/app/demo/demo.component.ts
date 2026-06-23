@@ -1,5 +1,5 @@
 import { HorizontalConnectionPos, VerticalConnectionPos } from '@angular/cdk/overlay';
-import { Component, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, TemplateRef, ViewChild, ViewContainerRef, ChangeDetectionStrategy, signal } from '@angular/core';
 import { NgOverlayContainerConfiguration, NgOverlayContainerService } from 'ng-overlay-container';
 import { DemoOverlayComponent } from '../demo-overlay.component';
 import { MatRadioGroup, MatRadioButton } from '@angular/material/radio';
@@ -14,6 +14,7 @@ import { MatOption } from '@angular/material/core';
     selector: 'app-demo',
     templateUrl: './demo.component.html',
     styleUrls: ['./demo.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [MatRadioGroup, FormsModule, MatRadioButton, MatButton, MatFormField, MatLabel, MatSelect, MatOption]
 })
 export class DemoComponent {
@@ -83,7 +84,9 @@ export class DemoComponent {
     this.updateConfig();
   }
 
-  public returnedValue: string;
+  // Signal so the view updates when `afterClosed$` emits. In a zoneless app a plain
+  // property assignment inside the subscription would not trigger change detection.
+  public returnedValue = signal<string | undefined>(undefined);
 
   public updateConfig(): void {
     this.overlayConfiguration = {
@@ -178,7 +181,7 @@ export class DemoComponent {
 
     ngPopoverRef.afterClosed$.subscribe((result) => {
       if (result.data) {
-        this.returnedValue = result.data.returnValue;
+        this.returnedValue.set(result.data.returnValue);
       }
     });
   }
