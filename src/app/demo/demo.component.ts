@@ -1,5 +1,5 @@
 import { HorizontalConnectionPos, VerticalConnectionPos } from '@angular/cdk/overlay';
-import { Component, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, TemplateRef, ViewChild, ViewContainerRef, ChangeDetectionStrategy, signal } from '@angular/core';
 import { NgOverlayContainerConfiguration, NgOverlayContainerService } from 'ng-overlay-container';
 import { DemoOverlayComponent } from '../demo-overlay.component';
 import { MatRadioGroup, MatRadioButton } from '@angular/material/radio';
@@ -14,6 +14,7 @@ import { MatOption } from '@angular/material/core';
     selector: 'app-demo',
     templateUrl: './demo.component.html',
     styleUrls: ['./demo.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [MatRadioGroup, FormsModule, MatRadioButton, MatButton, MatFormField, MatLabel, MatSelect, MatOption]
 })
 export class DemoComponent {

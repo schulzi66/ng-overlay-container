@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, TemplateRef, ViewEncapsulation } from '@angular/core';
+import { Component, HostListener, OnInit, TemplateRef, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { NgOverlayContainerContent } from '../models/ng-overlay-container-content.type';
 import { NgPopoverRenderMethod } from '../models/ng-popover-render-method.type';
 import { NgPopoverRef } from './ng-popover-reference';
@@ -12,6 +12,7 @@ import { NgTemplateOutlet, NgComponentOutlet } from '@angular/common';
     templateUrl: './ng-popover.component.html',
     styleUrls: ['./ng-popover.component.scss'],
     encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [CdkDrag, CdkDragHandle, NgTemplateOutlet, NgComponentOutlet]
 })
 export class NgPopoverComponent implements OnInit {

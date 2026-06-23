@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
@@ -30,6 +30,7 @@ import { NgPopoverRef } from 'ng-overlay-container';
       <button style="margin: 10px;" mat-stroked-button color="primary" (click)="close()">Pass data back</button>
     </div>
   `,
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [MatIconButton, MatIcon, FormsModule, MatFormField, MatLabel, MatInput, MatButton]
 })
 export class DemoOverlayComponent {
